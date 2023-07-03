@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfa831b162c49f2b0d5bc5216e79a17, type: 3}
+  m_Name: Lucario
+  m_EditorClassIdentifier: 
+  dexNumber: 1
+  name: Lucario
+  sprite: {fileID: 391532450, guid: d22f465e2f6f8ff4aace69dc276f84ac, type: 3}
+  typing: []
+  health: 100
+  attack: 100
+  defence: 100
+  specialAtk: 100
+  specialDef: 100
+  speed: 100
+  moveSet: []
+  ability: {fileID: 0}
+  powerPoints: 6
+  movementPoints: 3
+  range: 0
