@@ -1,37 +1,41 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Battlers;
+using Input;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using Util;
+using Utils;
 
 namespace StateManagement
 {
     public class InitBattleState : State
     {
-        private Tilemap _partyPlacementsTilemap;
-        private Tilemap _enemyPlacementsTilemap;
-
-        private List<Battler> _party;
-        private List<Battler> _enemies;
-
+        private BattleManager _battleManager;
         private BattlersSpawner _battlersSpawner;
+        private BattlersDragAndDropHandler _dragAndDropHandler;
+
+        private List<Vector2> _partyPositions;
+        private List<Vector2> _enemyPositions;
+
+        private bool _battlersInitialized;
+
+        private List<BattlerInstance> _party;
+        private List<BattlerInstance> _enemies;
+
+        private InputChannel _inputChannel;
 
         private void Awake()
         {
-            var battleManager = BattleManager.Instance;
-            
-            _partyPlacementsTilemap = battleManager.partyPlacementsTilemap;
-            _enemyPlacementsTilemap = battleManager.enemyPlacementsTilemap;
-            
-            _party = battleManager.party;
-            _enemies = battleManager.enemies;
-            
+            _battleManager = BattleManager.Instance;
             _battlersSpawner = new BattlersSpawner();
+            _partyPositions = _battleManager.PartyPlacementsTilemap.GetTilePositionsWorldSpace();
+            _enemyPositions = _battleManager.EnemyPlacementsTilemap.GetTilePositionsWorldSpace();
+            _inputChannel = Resources.Load("Input/InputChannel") as InputChannel;
         }
 
         public override void Enter()
         {
             base.Enter();
+            Debug.Log("> Now in InitBattleState");
             InitBattle();
         }
 
@@ -44,21 +48,51 @@ namespace StateManagement
 
         private void InitBattle()
         {
-            Debug.Log("> Now in InitBattleState");
             ShowPlacements(true);
             SpawnBattlers();
+            _dragAndDropHandler = new BattlersDragAndDropHandler(_party, _partyPositions, _battleManager.WalkableTilemap);
         }
 
         private void ShowPlacements(bool showPlacements)
         {
-            _partyPlacementsTilemap.gameObject.SetActive(showPlacements);
-            _enemyPlacementsTilemap.gameObject.SetActive(showPlacements);
+            _battleManager.PartyPlacementsTilemap.gameObject.SetActive(showPlacements);
+            _battleManager.EnemyPlacementsTilemap.gameObject.SetActive(showPlacements);
         }
 
         private void SpawnBattlers()
         {
-            BattleManager.Instance.partyMembersInstances = _battlersSpawner.SpawnBattlers(_party, _partyPlacementsTilemap.GetTilePositionsWorldSpace());
-            BattleManager.Instance.enemiesInstances = _battlersSpawner.SpawnBattlers(_enemies, _enemyPlacementsTilemap.GetTilePositionsWorldSpace());
+            _party = _battlersSpawner.SpawnBattlers(_battleManager.Party, _partyPositions);
+            _enemies = _battlersSpawner.SpawnBattlers(_battleManager.Enemies, _enemyPositions);
+            _battleManager.PartyBattlerInstances = _party;
+            _battleManager.EnemyBattlerInstances = _enemies;
+        }
+        
+        private void OnBeginMouseDrag(Vector2 mousePos)
+        {
+            _dragAndDropHandler.OnBeginMouseDrag(mousePos);
+            _inputChannel.mousePositionEvent += _dragAndDropHandler.OnMouseDrag;
+        }
+
+        private void OnEndMouseDrag(Vector2 mousePos)
+        {
+            _dragAndDropHandler.OnEndMouseDrag(mousePos);
+            _inputChannel.mousePositionEvent -= _dragAndDropHandler.OnMouseDrag;
+        }
+
+        protected override void AddListeners()
+        {
+            base.AddListeners();
+            _inputChannel.mouseBeginDragEvent += OnBeginMouseDrag;
+            _inputChannel.mouseEndDragEvent += OnEndMouseDrag;
+            _inputChannel.readySkipTurn += Exit;
+        }
+
+        protected override void RemoveListeners()
+        {
+            base.RemoveListeners();
+            _inputChannel.mouseBeginDragEvent -= OnBeginMouseDrag;
+            _inputChannel.mouseEndDragEvent -= OnEndMouseDrag;
+            _inputChannel.readySkipTurn -= Exit;
         }
     }
 }

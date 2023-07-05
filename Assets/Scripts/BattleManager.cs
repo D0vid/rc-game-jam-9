@@ -1,23 +1,43 @@
 using System.Collections.Generic;
+using System.Linq;
 using Battlers;
 using StateManagement;
+using UnityEngine;
 using UnityEngine.Tilemaps;
+using Util;
+using Utils;
 
-public class BattleManager : StateManager
+public class BattleManager : Singleton<BattleManager>
 {
-    // Everything is public so there is a cross reference between states & state machine, could be better with events
-    public List<Battler> party;
-    public List<Battler> enemies;
+    [SerializeField] private List<Battler> party;
+    [SerializeField] private List<Battler> enemies;
+
+    [SerializeField] private Tilemap walkableTilemap;
+    [SerializeField] private Tilemap partyPlacementsTilemap;
+    [SerializeField] private Tilemap enemyPlacementsTilemap;
     
-    public List<BattlerInstance> partyMembersInstances;
-    public List<BattlerInstance> enemiesInstances;
-    
-    public Tilemap walkableTilemap;
-    public Tilemap partyPlacementsTilemap;
-    public Tilemap enemyPlacementsTilemap;
+    public List<Battler> Party => party;
+    public List<Battler> Enemies => enemies;
+
+    public Tilemap WalkableTilemap => walkableTilemap;
+    public Tilemap PartyPlacementsTilemap => partyPlacementsTilemap;
+    public Tilemap EnemyPlacementsTilemap => enemyPlacementsTilemap;
+
+    public List<BattlerInstance> PartyBattlerInstances { get; set; }
+    public List<BattlerInstance> EnemyBattlerInstances { get; set; }
+    public List<BattlerInstance> AllBattlers => PartyBattlerInstances.Concat(EnemyBattlerInstances).ToList();
+    public PriorityQueue<BattlerInstance, int> BattlersQueue { get; set; }
+
+    private TurnOrderResolver _turnOrderResolver;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        _turnOrderResolver = new TurnOrderResolver();
+    }
 
     private void Start()
     {
-        ChangeState<InitBattleState>();
+        StateManager.Instance.ChangeState<InitBattleState>();
     }
 }

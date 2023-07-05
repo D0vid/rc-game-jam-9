@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
+using Input;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TextTyper : MonoBehaviour
 {
@@ -8,23 +12,21 @@ public class TextTyper : MonoBehaviour
     [SerializeField] private float textSpeed = 0.05f;
     [SerializeField] private float speedUpTextSpeed = 0.02f;
     
+    private InputChannel _inputChannel;
+    
     private TextMeshProUGUI _textMesh;
-    private float _savedTextSpeed;
+    private float _defaultTextSpeed;
 
     private void Awake()
     {
+        _inputChannel = Resources.Load("Input/InputChannel") as InputChannel;
         _textMesh = GetComponent<TextMeshProUGUI>();
-        _savedTextSpeed = textSpeed;
+        _defaultTextSpeed = textSpeed;
     }
 
     private void Start()
     {
         StartCoroutine(DisplayLines());
-    }
-
-    private void Update()
-    {
-        textSpeed = Input.GetMouseButton(1) ? speedUpTextSpeed : _savedTextSpeed;
     }
 
     private IEnumerator DisplayLines()
@@ -34,7 +36,6 @@ public class TextTyper : MonoBehaviour
             _textMesh.text = "";
             yield return DisplayLine(line);
         }
-        _textMesh.text = "";
     }
 
     private IEnumerator DisplayLine(string line)
@@ -45,6 +46,28 @@ public class TextTyper : MonoBehaviour
             yield return new WaitForSeconds(letter == ',' ? textSpeed * 2 : textSpeed);
         }
         _textMesh.text += " ";
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return new WaitUntil(() => Mouse.current.leftButton.wasPressedThisFrame);
+    }
+
+    private void OnMouseButtonPressed(Vector2 arg0)
+    {
+        textSpeed = speedUpTextSpeed;
+    }
+
+    private void OnMouseButtonReleased(Vector2 arg0)
+    {
+        textSpeed = _defaultTextSpeed;
+    }
+
+    private void OnEnable()
+    {
+        _inputChannel.mouseBeginDragEvent += OnMouseButtonPressed;
+        _inputChannel.mouseEndDragEvent += OnMouseButtonReleased;
+    }
+
+    private void OnDisable()
+    {
+        _inputChannel.mouseBeginDragEvent -= OnMouseButtonPressed;
+        _inputChannel.mouseEndDragEvent -= OnMouseButtonReleased;
     }
 }

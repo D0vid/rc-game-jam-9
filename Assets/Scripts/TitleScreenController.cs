@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using Input;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,17 +8,12 @@ public class TitleScreenController : MonoBehaviour
     [SerializeField] private AudioClip clip;
     [SerializeField] private AudioSource audioSource;
     
+    private InputChannel _inputChannel;
+    
     private void Awake()
     {
+        _inputChannel = Resources.Load("Input/InputChannel") as InputChannel;
         DontDestroyOnLoad(gameObject);
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(LoadMainMenu());
-        }
     }
 
     private IEnumerator LoadMainMenu()
@@ -29,5 +24,20 @@ public class TitleScreenController : MonoBehaviour
         yield return SceneManager.LoadSceneAsync(1);
         yield return FadeTransition.Instance.UndoFade();
         Destroy(gameObject);
+    }
+
+    private void OnMouseClicked(Vector2 mousePos)
+    {
+        StartCoroutine(LoadMainMenu());
+    }
+
+    private void OnEnable()
+    {
+        _inputChannel.mouseClickEvent += OnMouseClicked;
+    }
+
+    private void OnDisable()
+    {
+        _inputChannel.mouseClickEvent -= OnMouseClicked;
     }
 }

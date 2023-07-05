@@ -1,10 +1,8 @@
-﻿using Battlers;
-using UnityEngine;
-using Util;
+﻿using Util;
 
 namespace StateManagement
 {
-    public class StateManager : Singleton<BattleManager>
+    public class StateManager : Singleton<StateManager>
     {
         private bool _inTransition;
         private State _currentState;
