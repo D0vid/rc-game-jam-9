@@ -170,7 +170,7 @@ public partial class @DefaultInput: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4df70acb-c2ed-4b93-94f2-bcd9098d8f72"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/f1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",

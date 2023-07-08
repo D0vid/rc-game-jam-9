@@ -1,33 +1,30 @@
 ﻿using System.Collections.Generic;
 using Battlers;
+using Grid;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace StateManagement
 {
     public class BattlersDragAndDropHandler
     {
-        private readonly List<BattlerInstance> _party;
-        private readonly List<Vector2> _partyPlacements;
-        private readonly Tilemap _walkableTilemap;
-        
+        private readonly BattleGrid _battleGrid;
+
         private Vector3 _draggedBattlerOriginalPosition;
         private Transform _draggedBattlerTransform;
+        
+        public List<BattlerInstance> Party { get; set; }
 
-        public BattlersDragAndDropHandler(List<BattlerInstance> party, List<Vector2> partyPlacements, Tilemap walkableTilemap)
+        public BattlersDragAndDropHandler(BattleGrid battleGrid)
         {
-            _party = party;
-            _partyPlacements = partyPlacements;
-            _walkableTilemap = walkableTilemap;
+            _battleGrid = battleGrid;
         }
 
         public void OnBeginMouseDrag(Vector2 mousePos)
         {
-            var cellPos = _walkableTilemap.WorldToCell(mousePos);
-            if (_partyPlacements.Contains(_walkableTilemap.CellToWorld(cellPos)))
+            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
+            if (_battleGrid.PartyPlacements.Contains(mousePos))
             {
-                Vector2 snappedToGrid = _walkableTilemap.CellToWorld(cellPos);
-                BattlerInstance battler = _party.Find(ally => ally.transform.position.Equals(snappedToGrid));
+                BattlerInstance battler = Party.Find(ally => ally.transform.position.Equals(mousePos));
                 if (battler != null)
                 {
                     _draggedBattlerTransform = battler.transform;
@@ -39,22 +36,20 @@ namespace StateManagement
 
         public void OnMouseDrag(Vector2 mousePos)
         {
-            var cellPos = _walkableTilemap.WorldToCell(mousePos);
-            var worldPosCentered = _walkableTilemap.CellToWorld(cellPos);
-            if (_draggedBattlerTransform != null && _walkableTilemap.HasTile(cellPos))
+            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
+            if (_draggedBattlerTransform != null && _battleGrid.IsWalkable(mousePos))
             {
-                _draggedBattlerTransform.position = worldPosCentered;
+                _draggedBattlerTransform.position = mousePos;
             }
         }
 
         public void OnEndMouseDrag(Vector2 mousePos)
         {
-            var cellPos = _walkableTilemap.WorldToCell(mousePos);
-            var worldPosCentered = _walkableTilemap.CellToWorld(cellPos);
+            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
             if (_draggedBattlerTransform != null)
             {
                 // Reset battler position on invalid placement
-                if (!_walkableTilemap.HasTile(cellPos) || !_partyPlacements.Contains(worldPosCentered))
+                if (!_battleGrid.IsWalkable(mousePos) || !_battleGrid.PartyPlacements.Contains(mousePos))
                     _draggedBattlerTransform.position = _draggedBattlerOriginalPosition; 
                 // Swap battlers if necessary
                 Transform eventualTeammateToSwapTransform = FindEventualTeammateToSwapTransform();
@@ -67,7 +62,7 @@ namespace StateManagement
 
         private Transform FindEventualTeammateToSwapTransform()
         {
-            BattlerInstance teammate = _party.Find(ally =>
+            BattlerInstance teammate = Party.Find(ally =>
             {
                 bool isDifferentBattler = ally.gameObject != _draggedBattlerTransform.gameObject;
                 bool isAtSamePosition = ally.transform.position.Equals(_draggedBattlerTransform.position);

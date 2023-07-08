@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add position swapping with drag&amp;drop during InitBattleState + switch to new input system">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Heap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Heap.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Node.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Node.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/PathFinder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/PathFinder.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagement.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/LineUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/LineUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextTyper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TextTyper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BattleManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ButtonController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EssentialObjectsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagement/EssentialObjectsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EssentialObjectsManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManagement/EssentialObjectsManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FadeTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FadeTransition.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/DefaultInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/DefaultInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/DefaultInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/DefaultInput.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenuController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SingletonUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SingletonUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SingletonUtils.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SingletonUtils.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersDragAndDropHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersDragAndDropHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/InitBattleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/InitBattleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/StateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/StateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextFader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextFader.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextTyper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TextTyper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TitleScreenController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,22 +52,22 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/01912c1db46b46a7baf6d81d4f39655627800/4c/131e0730/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scenes/0_Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scenes/0_Title Screen.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/BattleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/BattleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/FadeTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextFader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TextTyper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TitleScreenController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/TitleScreenController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.24/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/PlayerInput/DefaultInputActions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/WrapperWindowFixture.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasGroupInheritedAlpha.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,10 +124,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8632">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3496">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8632" />
+      <option name="pid" value="3496" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -106,7 +146,8 @@
       <workItem from="1688203586621" duration="4553000" />
       <workItem from="1688319348424" duration="13205000" />
       <workItem from="1688403409485" duration="18616000" />
-      <workItem from="1688491654107" duration="22048000" />
+      <workItem from="1688491654107" duration="23345000" />
+      <workItem from="1688841174302" duration="15791000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -129,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688586527742</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add missing files for previous commit">
+      <created>1688589419835</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688589419835</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +202,39 @@
     <MESSAGE value="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype" />
     <MESSAGE value="Merge gitignore issues" />
     <MESSAGE value="Add position swapping with drag&amp;drop during InitBattleState + switch to new input system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add position swapping with drag&amp;drop during InitBattleState + switch to new input system" />
+    <MESSAGE value="Add missing files for previous commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add missing files for previous commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/InitBattleState.cs</url>
+          <line>46</line>
+          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\InitBattleState.cs" initialLine="40" containingFunctionPresentation="method 'SpawnBattlers'">
+            <startOffsets>
+              <option value="1418" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1512" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersDragAndDropHandler.cs</url>
+          <line>23</line>
+          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\BattlersDragAndDropHandler.cs" initialLine="23" containingFunctionPresentation="method 'OnBeginMouseDrag'">
+            <startOffsets>
+              <option value="587" />
+            </startOffsets>
+            <endOffsets>
+              <option value="639" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

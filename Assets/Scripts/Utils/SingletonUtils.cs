@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Util
+namespace Utils
 {
     /// <summary>
     /// Creates a new unique instance of given class and overrides the current instance.
