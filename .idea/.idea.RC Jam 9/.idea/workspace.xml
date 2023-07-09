@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add TurnOrderResolver logic + basic BattlerTurnState and EnemyTurnState implementation + basic movement logic + various refactors">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png" afterDir="false" />
-    </list>
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Update spritesheet for Lucario" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +133,7 @@
       <workItem from="1688403409485" duration="18616000" />
       <workItem from="1688491654107" duration="23345000" />
       <workItem from="1688841174302" duration="17319000" />
-      <workItem from="1688891346416" duration="29832000" />
+      <workItem from="1688891346416" duration="29856000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -180,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688921830450</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update spritesheet for Lucario">
+      <created>1688928810395</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688928810395</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +212,8 @@
     <MESSAGE value="Add missing files for previous commit" />
     <MESSAGE value="Separate grid related logic into NodeGrid &amp; BattleGrid class + refactor InitBattleState and DragAndDropHandler" />
     <MESSAGE value="Add TurnOrderResolver logic + basic BattlerTurnState and EnemyTurnState implementation + basic movement logic + various refactors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add TurnOrderResolver logic + basic BattlerTurnState and EnemyTurnState implementation + basic movement logic + various refactors" />
+    <MESSAGE value="Update spritesheet for Lucario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update spritesheet for Lucario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

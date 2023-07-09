@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lucario
   m_EditorClassIdentifier: 
   dexNumber: 1
-  sprite: {fileID: 184266119, guid: 342994301cf607348b8a801905876a48, type: 3}
+  sprite: {fileID: 526814967, guid: 342994301cf607348b8a801905876a48, type: 3}
   typing: []
   health: 100
   attack: 100
