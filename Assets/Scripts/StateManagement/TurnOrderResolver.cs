@@ -1,22 +1,38 @@
 ﻿using System.Collections.Generic;
 using Battlers;
-using Utils;
-using System.Linq;
 
 namespace StateManagement
 {
     public class TurnOrderResolver
     {
-        public PriorityQueue<BattlerInstance, int> ResolveTurnOrder(List<BattlerInstance> battlers)
+        public Queue<BattlerInstance> ResolveTurnOrder(List<BattlerInstance> party, List<BattlerInstance> enemies)
         {
-            var queue = new PriorityQueue<BattlerInstance, int>();
+            var finalQueue = new Queue<BattlerInstance>();
             
-            foreach (var battler in battlers)
-            {
-                queue.Enqueue(battler, battler.Battler.Speed);
-            }
+            var sortedParty = SortByDescendingSpeed(party);
+            var sortedEnemies = SortByDescendingSpeed(enemies);
+            
+            var doesPartyContainFastestBattler = sortedParty.Peek().Battler.Speed > sortedEnemies.Peek().Battler.Speed;
+            var firstTeam = doesPartyContainFastestBattler ? sortedParty : sortedEnemies;
+            var secondTeam = firstTeam.Equals(sortedParty) ? sortedEnemies : sortedParty;
 
-            return queue;
+            while (firstTeam.Count > 0)
+            {
+                finalQueue.Enqueue(firstTeam.Dequeue());
+                if (secondTeam.Count > 0)
+                    finalQueue.Enqueue(secondTeam.Dequeue());
+            }
+            while(secondTeam.Count > 0)
+                finalQueue.Enqueue(secondTeam.Dequeue());
+
+            return finalQueue;
+        }
+
+        private Queue<BattlerInstance> SortByDescendingSpeed(List<BattlerInstance> battlers)
+        {
+            var speedComparer = new SpeedComparer();
+            battlers.Sort(speedComparer);
+            return new Queue<BattlerInstance>(battlers);
         }
     }
 }

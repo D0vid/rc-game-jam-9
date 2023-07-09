@@ -6,25 +6,26 @@ namespace StateManagement
 {
     public class BattlersSpawner
     {
-        public List<BattlerInstance> SpawnBattlers(List<Battler> battlersData, List<Vector2> battlersPlacements)
+        public List<BattlerInstance> SpawnBattlers(List<Battler> battlersData, List<Vector2> battlersPlacements, Team team)
         {
-            List<BattlerInstance> battlersObjects = new List<BattlerInstance>();
+            List<BattlerInstance> battlerInstances = new List<BattlerInstance>();
             for (var i = 0; i < battlersData.Count; i++)
             {
                 Vector2 position = battlersPlacements[i];
-                BattlerInstance battler = SpawnBattler(battlersData[i], position);
-                battlersObjects.Add(battler);
+                BattlerInstance battlerInstance = SpawnBattler(battlersData[i], position);
+                battlerInstance.Team = team;
+                battlerInstances.Add(battlerInstance);
             }
 
-            return battlersObjects;
+            return battlerInstances;
         }
 
         private BattlerInstance SpawnBattler(Battler battler, Vector2 position)
         {
-            GameObject battlerInstance = new GameObject(battler.Name);
-            SetSprite(battler, battlerInstance);
-            SetPositionAndScale(position, battlerInstance);
-            return SetAndGetBattler(battlerInstance); // TODO separate method
+            GameObject gameObject = new GameObject(battler.Name);
+            SetSprite(battler, gameObject);
+            SetPositionAndScale(position, gameObject);
+            return SetAndGetBattler(gameObject, battler); // TODO separate method
         }
 
         private void SetSprite(Battler battler, GameObject battlerInstance)
@@ -41,11 +42,12 @@ namespace StateManagement
             battlerInstance.transform.parent = BattleManager.Instance.transform;
         }
 
-        private BattlerInstance SetAndGetBattler(GameObject battlerObject)
+        private BattlerInstance SetAndGetBattler(GameObject battlerObject, Battler battler)
         {
             BattlerInstance battlerInstance = battlerObject.AddComponent<BattlerInstance>();
             battlerObject.AddComponent<Animator>();
             battlerObject.AddComponent<AudioSource>();
+            battlerInstance.Battler = battler;
             return battlerInstance;
         }
     }

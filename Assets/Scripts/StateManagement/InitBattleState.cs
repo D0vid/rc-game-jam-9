@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Grid;
+﻿using Battlers;
 using Input;
 using UnityEngine;
 
@@ -8,40 +7,38 @@ namespace StateManagement
     public class InitBattleState : State
     {
         private BattleManager _battleManager;
-        private BattleGrid _battleGrid;
         private BattlersSpawner _battlersSpawner;
         private BattlersDragAndDropHandler _dragAndDropHandler;
-
+        private TurnOrderResolver _turnOrderResolver;
         private InputChannel _inputChannel;
 
         private void Awake()
         {
             _battlersSpawner = new BattlersSpawner();
+            _turnOrderResolver = new TurnOrderResolver();
             _inputChannel = Resources.Load("Input/InputChannel") as InputChannel;
         }
 
         public override void Enter()
         {
             base.Enter();
-            _battleManager = BattleManager.Instance as BattleManager;
-            _battleGrid = BattleGrid.Instance as BattleGrid;
-            _battleGrid!.ShowPlacementPositions(true);
+            _battleManager = BattleManager.Instance;
+            _battleManager.ShowPlacementPositions(true);
             SpawnBattlers();
-            _dragAndDropHandler = new BattlersDragAndDropHandler(_battleGrid);
-            _dragAndDropHandler.Party = _battleManager!.PartyBattlerInstances;
+            _battleManager.BattlersQueue = _turnOrderResolver.ResolveTurnOrder(_battleManager.PartyBattlerInstances, _battleManager.EnemyBattlerInstances);
+            _dragAndDropHandler = new BattlersDragAndDropHandler(_battleManager);
         }
 
         public override void Exit()
         {
             base.Exit();
-            _battleGrid.ShowPlacementPositions(false);
-            StateManager.Instance.ChangeState<PlayerTurnState>();
+            _battleManager.ShowPlacementPositions(false);
         }
 
         private void SpawnBattlers()
         {
-            var party = _battlersSpawner.SpawnBattlers(_battleManager.Party, _battleGrid.PartyPlacements);
-            var enemies = _battlersSpawner.SpawnBattlers(_battleManager.Enemies, _battleGrid.EnemyPlacements);
+            var party = _battlersSpawner.SpawnBattlers(_battleManager.Party, _battleManager.PartyPlacements, Team.Party);
+            var enemies = _battlersSpawner.SpawnBattlers(_battleManager.Enemies, _battleManager.EnemyPlacements, Team.Enemies);
             _battleManager.InitBattlers(party, enemies);
         }
         
@@ -57,12 +54,17 @@ namespace StateManagement
             _inputChannel.mousePositionEvent -= _dragAndDropHandler.OnMouseDrag;
         }
 
+        private void OnReady()
+        {
+            _battleManager.StartPlayerOrEnemyTurn();
+        }
+
         protected override void AddListeners()
         {
             base.AddListeners();
             _inputChannel.mouseBeginDragEvent += OnBeginMouseDrag;
             _inputChannel.mouseEndDragEvent += OnEndMouseDrag;
-            _inputChannel.readySkipTurn += Exit;
+            _inputChannel.readySkipTurn += OnReady;
         }
 
         protected override void RemoveListeners()
@@ -70,7 +72,7 @@ namespace StateManagement
             base.RemoveListeners();
             _inputChannel.mouseBeginDragEvent -= OnBeginMouseDrag;
             _inputChannel.mouseEndDragEvent -= OnEndMouseDrag;
-            _inputChannel.readySkipTurn -= Exit;
+            _inputChannel.readySkipTurn -= OnReady;
         }
     }
 }

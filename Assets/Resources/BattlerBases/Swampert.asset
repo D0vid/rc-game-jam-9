@@ -20,9 +20,9 @@ MonoBehaviour:
   defence: 100
   specialAtk: 100
   specialDef: 100
-  speed: 100
+  speed: 90
   moveSet: []
   ability: {fileID: 0}
-  powerPoints: 6
-  movementPoints: 3
+  powerPoints: 12
+  movementPoints: 6
   range: 0

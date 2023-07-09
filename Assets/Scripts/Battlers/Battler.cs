@@ -57,6 +57,9 @@ namespace Battlers
             return _id.GetHashCode();
         }
 
-        private int BaseStatCalculation(int baseValue) => Mathf.FloorToInt(battlerBase.health * level / 100f);
+        private int BaseStatCalculation(int baseValue)
+        {
+            return Mathf.FloorToInt(((2 * baseValue) + 31 + 255) * (level / 100f));
+        }
     }
 }

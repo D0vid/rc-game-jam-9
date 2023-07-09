@@ -1,30 +1,30 @@
 ﻿using System.Collections.Generic;
 using Battlers;
-using Grid;
 using UnityEngine;
 
 namespace StateManagement
 {
     public class BattlersDragAndDropHandler
     {
-        private readonly BattleGrid _battleGrid;
+        private readonly BattleManager _battleManager;
 
         private Vector3 _draggedBattlerOriginalPosition;
         private Transform _draggedBattlerTransform;
-        
-        public List<BattlerInstance> Party { get; set; }
 
-        public BattlersDragAndDropHandler(BattleGrid battleGrid)
+        private List<BattlerInstance> _party;
+
+        public BattlersDragAndDropHandler(BattleManager battleManager)
         {
-            _battleGrid = battleGrid;
+            _battleManager = battleManager;
+            _party = _battleManager.PartyBattlerInstances;
         }
 
         public void OnBeginMouseDrag(Vector2 mousePos)
         {
-            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
-            if (_battleGrid.PartyPlacements.Contains(mousePos))
+            mousePos = _battleManager.SnapPositionToGrid(mousePos);
+            if (_battleManager.PartyPlacements.Contains(mousePos))
             {
-                BattlerInstance battler = Party.Find(ally => ally.transform.position.Equals(mousePos));
+                BattlerInstance battler = _party.Find(ally => ally.transform.position.Equals(mousePos));
                 if (battler != null)
                 {
                     _draggedBattlerTransform = battler.transform;
@@ -36,8 +36,8 @@ namespace StateManagement
 
         public void OnMouseDrag(Vector2 mousePos)
         {
-            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
-            if (_draggedBattlerTransform != null && _battleGrid.IsWalkable(mousePos))
+            mousePos = _battleManager.SnapPositionToGrid(mousePos);
+            if (_draggedBattlerTransform != null && _battleManager.IsWalkable(mousePos))
             {
                 _draggedBattlerTransform.position = mousePos;
             }
@@ -45,11 +45,11 @@ namespace StateManagement
 
         public void OnEndMouseDrag(Vector2 mousePos)
         {
-            mousePos = _battleGrid.SnapPositionToGrid(mousePos);
+            mousePos = _battleManager.SnapPositionToGrid(mousePos);
             if (_draggedBattlerTransform != null)
             {
                 // Reset battler position on invalid placement
-                if (!_battleGrid.IsWalkable(mousePos) || !_battleGrid.PartyPlacements.Contains(mousePos))
+                if (!_battleManager.IsWalkable(mousePos) || !_battleManager.PartyPlacements.Contains(mousePos))
                     _draggedBattlerTransform.position = _draggedBattlerOriginalPosition; 
                 // Swap battlers if necessary
                 Transform eventualTeammateToSwapTransform = FindEventualTeammateToSwapTransform();
@@ -62,7 +62,7 @@ namespace StateManagement
 
         private Transform FindEventualTeammateToSwapTransform()
         {
-            BattlerInstance teammate = Party.Find(ally =>
+            BattlerInstance teammate = _party.Find(ally =>
             {
                 bool isDifferentBattler = ally.gameObject != _draggedBattlerTransform.gameObject;
                 bool isAtSamePosition = ally.transform.position.Equals(_draggedBattlerTransform.position);

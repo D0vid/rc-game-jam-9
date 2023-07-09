@@ -3,22 +3,27 @@ using UnityEngine;
 
 namespace Grid
 {
-    public class PathFinder : MonoBehaviour
+    public class PathfindingManager : MonoBehaviour
     {
-        [SerializeField] private NodeGrid nodeGrid = default;
+        private NodeGrid _nodeGrid;
 
         private const int LinearWeight = 10;
         private const int SqrtWeight = 14;
 
-        private List<Node> FindPath(Vector3 startPos, Vector3 targetPos)
+        private void Awake()
         {
-            Node startNode = nodeGrid.GetNodeForWorldPos(startPos);
-            Node targetNode = nodeGrid.GetNodeForWorldPos(targetPos);
+            _nodeGrid = GetComponent<NodeGrid>();
+        }
+
+        public List<Node> FindPath(Vector3 startPos, Vector3 targetPos)
+        {
+            Node startNode = _nodeGrid.GetNodeForWorldPos(startPos);
+            Node targetNode = _nodeGrid.GetNodeForWorldPos(targetPos);
 
             if (startNode == null || targetNode == null || startNode == targetNode)
                 return new List<Node>();
 
-            Heap<Node> openSet = new Heap<Node>(nodeGrid.MaxSize);
+            Heap<Node> openSet = new Heap<Node>(_nodeGrid.MaxSize);
             HashSet<Node> closedSet = new HashSet<Node>();
 
             openSet.Add(startNode);
@@ -31,7 +36,7 @@ namespace Grid
                 if (currentNode == targetNode)
                     return RetracePath(startNode, targetNode);
 
-                foreach (Node neighbour in nodeGrid.GetNeighbours(currentNode))
+                foreach (Node neighbour in _nodeGrid.GetNeighbours(currentNode))
                 {
                     if (!neighbour.Walkable || closedSet.Contains(neighbour)) continue;
 

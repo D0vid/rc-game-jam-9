@@ -23,6 +23,6 @@ MonoBehaviour:
   speed: 100
   moveSet: []
   ability: {fileID: 0}
-  powerPoints: 6
-  movementPoints: 3
+  powerPoints: 12
+  movementPoints: 6
   range: 0

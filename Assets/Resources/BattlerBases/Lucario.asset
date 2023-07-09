@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: Lucario
   m_EditorClassIdentifier: 
   dexNumber: 1
-  name: Lucario
-  sprite: {fileID: 391532450, guid: d22f465e2f6f8ff4aace69dc276f84ac, type: 3}
+  sprite: {fileID: 184266119, guid: 342994301cf607348b8a801905876a48, type: 3}
   typing: []
   health: 100
   attack: 100
   defence: 100
   specialAtk: 100
   specialDef: 100
-  speed: 100
+  speed: 110
   moveSet: []
   ability: {fileID: 0}
-  powerPoints: 6
-  movementPoints: 3
+  powerPoints: 12
+  movementPoints: 6
   range: 0

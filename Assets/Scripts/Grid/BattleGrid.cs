@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 using Utils;
 
@@ -10,6 +9,9 @@ namespace Grid
     {
         [SerializeField] private Tilemap partyPlacementsTilemap;
         [SerializeField] private Tilemap enemyPlacementsTilemap;
+
+        [SerializeField] private Tilemap pathHighlightMap;
+        [SerializeField] private TileBase pathHighlightTile;
         
         public List<Vector2> PartyPlacements { get; private set; }
         public List<Vector2> EnemyPlacements { get; private set; }
@@ -17,9 +19,31 @@ namespace Grid
         protected override void Awake()
         {
             base.Awake();
-            CreateNodes();
             PartyPlacements = partyPlacementsTilemap.GetTilePositionsWorldSpace();
             EnemyPlacements = enemyPlacementsTilemap.GetTilePositionsWorldSpace();
+        }
+        
+        public override List<Node> GetNeighbours(Node node)
+        {
+            List<Node> neighbours = new List<Node>();
+
+            for (int x = -1; x <= 1; x++)
+            {
+                for (int y = -1; y <= 1; y++)
+                {
+                    if (x == 0 && y == 0) 
+                        continue;
+                    if (x != 0 && y != 0) 
+                        continue;
+                    int checkX = node.CellPositionX + x;
+                    int checkY = node.CellPositionY + y;
+                    Vector3Int vectorToAdd = new Vector3Int(checkX, checkY, 0);
+                    if (NodeGridDictionary.ContainsKey(vectorToAdd)) 
+                        neighbours.Add(NodeGridDictionary[vectorToAdd]);
+                }
+            }
+
+            return neighbours;
         }
 
         public void ShowPlacementPositions(bool show)
@@ -33,6 +57,14 @@ namespace Grid
             Node node = GetNodeForWorldPos(position);
             return node?.WorldPosition ?? position;
         }
+        
+        public void HighlightPath(List<Node> path)
+        {
+            RemovePathHighlight();
+            path?.ForEach(node => pathHighlightMap.SetTile(node.CellPosition, pathHighlightTile));
+        }
+        
+        public void RemovePathHighlight() => pathHighlightMap.ClearAllTiles();
     }
 }
 

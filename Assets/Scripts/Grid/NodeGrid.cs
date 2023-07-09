@@ -1,27 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Utils;
 
 namespace Grid
 {
-    public class NodeGrid : Singleton<NodeGrid>
+    public class NodeGrid : MonoBehaviour
     {
         [SerializeField] protected Tilemap walkableTilemap; 
 
-        private Dictionary<Vector3Int, Node> _nodeGridDictionary;
+        protected Dictionary<Vector3Int, Node> NodeGridDictionary;
 
         private int _gridSizeX, _gridSizeY;
 
-        protected override void Awake()
-        {
-            base.Awake();
-            CreateNodes();
-        }
+        protected virtual void Awake() => CreateNodes();
 
         public int MaxSize => _gridSizeX * _gridSizeY;
 
-        public List<Node> GetNeighbours(Node node)
+        public virtual List<Node> GetNeighbours(Node node)
         {
             var neighbours = new List<Node>();
 
@@ -33,8 +28,8 @@ namespace Grid
                     var checkX = node.CellPositionX + x;
                     var checkY = node.CellPositionY + y;
                     Vector3Int vectorToAdd = new Vector3Int(checkX, checkY, 0);
-                    if (_nodeGridDictionary.ContainsKey(vectorToAdd)) 
-                        neighbours.Add(_nodeGridDictionary[vectorToAdd]);
+                    if (NodeGridDictionary.ContainsKey(vectorToAdd)) 
+                        neighbours.Add(NodeGridDictionary[vectorToAdd]);
                 }
             }
 
@@ -45,7 +40,7 @@ namespace Grid
         {
             Vector3Int cellPos = walkableTilemap.WorldToCell(worldPosition);
             cellPos = new Vector3Int(cellPos.x, cellPos.y, 0);
-            Node result = _nodeGridDictionary.ContainsKey(cellPos) ? _nodeGridDictionary[cellPos] : null;
+            Node result = NodeGridDictionary.ContainsKey(cellPos) ? NodeGridDictionary[cellPos] : null;
             return result;
         }
 
@@ -62,7 +57,7 @@ namespace Grid
 
             _gridSizeX = cellBounds.size.x;
             _gridSizeY = cellBounds.size.y;
-            _nodeGridDictionary = new Dictionary<Vector3Int, Node>();
+            NodeGridDictionary = new Dictionary<Vector3Int, Node>();
 
             var allPositions = cellBounds.allPositionsWithin;
 
@@ -70,7 +65,7 @@ namespace Grid
             {
                 var walkable = walkableTilemap.HasTile(cellPos);
                 Vector3 worldPos = walkableTilemap.CellToWorld(cellPos);
-                _nodeGridDictionary[cellPos] = new Node(walkable, worldPos, cellPos);
+                NodeGridDictionary[cellPos] = new Node(walkable, worldPos, cellPos);
             }
         }
     }
