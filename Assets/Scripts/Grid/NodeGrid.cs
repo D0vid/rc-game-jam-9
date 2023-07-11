@@ -8,13 +8,16 @@ namespace Grid
     {
         [SerializeField] protected Tilemap walkableTilemap; 
 
-        protected Dictionary<Vector3Int, Node> NodeGridDictionary;
-
         private int _gridSizeX, _gridSizeY;
 
-        protected virtual void Awake() => CreateNodes();
+        protected Dictionary<Vector3Int, Node> NodeGridDictionary;
 
         public int MaxSize => _gridSizeX * _gridSizeY;
+
+        protected virtual void Awake()
+        {
+            CreateNodes();
+        }
 
         public virtual List<Node> GetNeighbours(Node node)
         {
@@ -36,6 +39,8 @@ namespace Grid
             return neighbours;
         }
 
+        public virtual bool ContainsBattler(Node neighbour) => false;
+
         public Node GetNodeForWorldPos(Vector3 worldPosition)
         {
             Vector3Int cellPos = walkableTilemap.WorldToCell(worldPosition);
@@ -50,7 +55,7 @@ namespace Grid
             return node != null && node.Walkable;
         }
 
-        protected void CreateNodes()
+        private void CreateNodes()
         {
             walkableTilemap.CompressBounds();
             BoundsInt cellBounds = walkableTilemap.cellBounds;

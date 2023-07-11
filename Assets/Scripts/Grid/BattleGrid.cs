@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using StateManagement;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Utils;
@@ -12,13 +14,17 @@ namespace Grid
 
         [SerializeField] private Tilemap pathHighlightMap;
         [SerializeField] private TileBase pathHighlightTile;
+
+        private BattleManager _battleManager; 
         
         public List<Vector2> PartyPlacements { get; private set; }
         public List<Vector2> EnemyPlacements { get; private set; }
+        public List<Vector2> BattlerPositions => _battleManager.AllBattlers?.Select(b => b.Position).ToList();
 
         protected override void Awake()
         {
             base.Awake();
+            _battleManager = GetComponent<BattleManager>();
             PartyPlacements = partyPlacementsTilemap.GetTilePositionsWorldSpace();
             EnemyPlacements = enemyPlacementsTilemap.GetTilePositionsWorldSpace();
         }
@@ -45,6 +51,8 @@ namespace Grid
 
             return neighbours;
         }
+
+        public override bool ContainsBattler(Node node) => BattlerPositions.Contains(node.WorldPosition);
 
         public void ShowPlacementPositions(bool show)
         {

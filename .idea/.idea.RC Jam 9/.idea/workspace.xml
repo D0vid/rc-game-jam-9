@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add spritesheets &amp; animations for gardevoir &amp; swampert">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +121,7 @@
       <workItem from="1688891346416" duration="29959000" />
       <workItem from="1689009475894" duration="21436000" />
       <workItem from="1689034839540" duration="195000" />
+      <workItem from="1689095114591" duration="1000000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -182,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689034692803</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add spritesheets &amp; animations for gardevoir &amp; swampert">
+      <created>1689095151092</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689095151092</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +224,7 @@
     <MESSAGE value="Update spritesheet for Lucario" />
     <MESSAGE value="Update slicing of Lucario spritesheet" />
     <MESSAGE value="Add movement animations logic + move turnstate metastate to battler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add movement animations logic + move turnstate metastate to battler" />
+    <MESSAGE value="Add spritesheets &amp; animations for gardevoir &amp; swampert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add spritesheets &amp; animations for gardevoir &amp; swampert" />
   </component>
 </project>

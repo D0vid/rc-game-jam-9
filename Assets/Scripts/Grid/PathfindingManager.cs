@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using StateManagement;
 using UnityEngine;
 
 namespace Grid
@@ -38,7 +39,8 @@ namespace Grid
 
                 foreach (Node neighbour in _nodeGrid.GetNeighbours(currentNode))
                 {
-                    if (!neighbour.Walkable || closedSet.Contains(neighbour)) continue;
+                    if (!neighbour.Walkable || _nodeGrid.ContainsBattler(neighbour) || closedSet.Contains(neighbour)) 
+                        continue;
 
                     int newMovementCostToNeighbour = currentNode.GCost + GetDistance(currentNode, neighbour);
                     if (newMovementCostToNeighbour < neighbour.GCost || !openSet.Contains(neighbour))
