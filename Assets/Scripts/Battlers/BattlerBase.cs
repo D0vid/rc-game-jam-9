@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Battlers
 {
@@ -6,7 +7,7 @@ namespace Battlers
     public class BattlerBase : ScriptableObject
     {
         public int dexNumber;
-        public Sprite sprite;
+        public Sprite[] sprites;
 
         public Type[] typing;
         

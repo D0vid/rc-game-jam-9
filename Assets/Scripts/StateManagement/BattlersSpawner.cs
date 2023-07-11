@@ -22,33 +22,28 @@ namespace StateManagement
 
         private BattlerInstance SpawnBattler(Battler battler, Vector2 position)
         {
-            GameObject gameObject = new GameObject(battler.Name);
-            SetSprite(battler, gameObject);
-            SetPositionAndScale(position, gameObject);
-            return SetAndGetBattler(gameObject, battler); // TODO separate method
+            GameObject battlerPrefab = Resources.Load<GameObject>("Prefabs/Battler");
+            BattlerInstance battlerInstance = Object.Instantiate(battlerPrefab).GetComponent<BattlerInstance>();
+            battlerInstance.gameObject.name = battler.Name;
+            battlerInstance.Battler = battler;
+            SetPositionAndScale(position, battlerInstance);
+            SetSprites(battler, battlerInstance);
+            return battlerInstance;
         }
 
-        private void SetSprite(Battler battler, GameObject battlerInstance)
+        private void SetSprites(Battler battler, BattlerInstance battlerInstance)
         {
-            SpriteRenderer spriteRenderer = battlerInstance.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = battler.Sprite;
+            SpriteRenderer spriteRenderer = battlerInstance.GetComponent<SpriteRenderer>();
+            var battlerAnimator = battlerInstance.gameObject.GetComponent<BattlerAnimator>();
+            battlerAnimator.SetAnimationSprites(battler.Sprites);
             spriteRenderer.sortingOrder = 2;
         }
 
-        private void SetPositionAndScale(Vector2 position, GameObject battlerInstance)
+        private void SetPositionAndScale(Vector2 position, BattlerInstance battlerInstance)
         {
             battlerInstance.transform.position = position;
             battlerInstance.transform.localScale = new Vector3(1f, 1f, 1f);
             battlerInstance.transform.parent = BattleManager.Instance.transform;
-        }
-
-        private BattlerInstance SetAndGetBattler(GameObject battlerObject, Battler battler)
-        {
-            BattlerInstance battlerInstance = battlerObject.AddComponent<BattlerInstance>();
-            battlerObject.AddComponent<Animator>();
-            battlerObject.AddComponent<AudioSource>();
-            battlerInstance.Battler = battler;
-            return battlerInstance;
         }
     }
 }

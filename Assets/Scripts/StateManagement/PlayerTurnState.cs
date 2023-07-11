@@ -13,7 +13,6 @@ namespace StateManagement
         private BattleManager _battleManager;
         private PathfindingManager _pathFindingManager;
 
-        private MetaState _currentState = MetaState.Idle;
         private Vector2 _lastSentPosition;
         private InputChannel _inputChannel;
         private BattlerInstance _currentBattler;
@@ -45,7 +44,7 @@ namespace StateManagement
         private void OnMouseHover(Vector2 mousePos)
         {
             Vector2 mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
-            if (_currentState == MetaState.Idle)
+            if (_currentBattler.State == BattlerState.Idle)
             {
                 if (_lastSentPosition == mousePosSnapped) 
                     return;
@@ -62,20 +61,15 @@ namespace StateManagement
         private void OnMouseClick(Vector2 mousePos)
         {
             Vector2 mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
-            if (_currentState == MetaState.Idle)
+            if (_currentBattler.State == BattlerState.Idle)
             {
                 if (!(_currentPath?.Count > 0) || mousePosSnapped != _lastSentPosition) 
                     return;
-                _currentState = MetaState.Moving;
                 _movementCoroutine = StartCoroutine(_currentBattler.FollowPath(_currentPath, OnEndOfPathReached));
             }
         }
 
-        private void OnEndOfPathReached()
-        {
-            ResetPath();
-            _currentState = MetaState.Idle;
-        }
+        private void OnEndOfPathReached() => ResetPath();
 
         private void ResetPath()
         {
@@ -108,12 +102,5 @@ namespace StateManagement
             _inputChannel.mouseClickEvent -= OnMouseClick;
             _inputChannel.readySkipTurn -= OnEndTurn;
         }
-    }
-
-    public enum MetaState
-    {
-        Idle,
-        Moving,
-        Casting,
     }
 }

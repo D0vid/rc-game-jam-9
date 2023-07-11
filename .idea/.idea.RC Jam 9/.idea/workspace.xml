@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Update spritesheet for Lucario" />
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/EssentialObjects.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/EssentialObjects.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EssentialObjects.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EssentialObjects.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,30 +42,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/01912c1db46b46a7baf6d81d4f39655627800/4c/131e0730/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1726b8fb30b6494e8753e45adcf8a07b284000/3f/e19cbbec/SortedSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/605bf8b31fcb444b85176da963870aa746ac00/b2/f5fea8b4/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scenes/4_Tutorial Battle.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/Battler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/Battler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/BattleGrid.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/BattleGrid.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/NodeGrid.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/NodeGrid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/BattleManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/BattlersSpawner.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/InitBattleState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/PlayerTurnState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/PlayerTurnState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/TurnOrderResolver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/TurnOrderResolver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/TurnOrderResolver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/StateManagement/TurnOrderResolver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,10 +119,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10624">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14220">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10624" />
+      <option name="pid" value="14220" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -133,7 +143,8 @@
       <workItem from="1688403409485" duration="18616000" />
       <workItem from="1688491654107" duration="23345000" />
       <workItem from="1688841174302" duration="17319000" />
-      <workItem from="1688891346416" duration="29856000" />
+      <workItem from="1688891346416" duration="29959000" />
+      <workItem from="1689009475894" duration="21129000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -184,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688928810395</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update slicing of Lucario spritesheet">
+      <created>1688928917609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688928917609</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,25 +231,7 @@
     <MESSAGE value="Separate grid related logic into NodeGrid &amp; BattleGrid class + refactor InitBattleState and DragAndDropHandler" />
     <MESSAGE value="Add TurnOrderResolver logic + basic BattlerTurnState and EnemyTurnState implementation + basic movement logic + various refactors" />
     <MESSAGE value="Update spritesheet for Lucario" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update spritesheet for Lucario" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/StateManager.cs</url>
-          <line>17</line>
-          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\StateManager.cs" initialLine="26" containingFunctionPresentation="method 'Transition'">
-            <startOffsets>
-              <option value="546" />
-            </startOffsets>
-            <endOffsets>
-              <option value="564" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Update slicing of Lucario spritesheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update slicing of Lucario spritesheet" />
   </component>
 </project>

@@ -22,7 +22,7 @@ namespace Battlers
         
         public int DexNumber => battlerBase.dexNumber;
         public string Name => battlerBase.name;
-        public Sprite Sprite => battlerBase.sprite;
+        public Sprite[] Sprites => battlerBase.sprites;
 
         public Type[] Typing => battlerBase.typing;
 
