@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/EssentialObjects.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/EssentialObjects.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/lucario_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EssentialObjects.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EssentialObjects.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +15,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/01912c1db46b46a7baf6d81d4f39655627800/4c/131e0730/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1726b8fb30b6494e8753e45adcf8a07b284000/3f/e19cbbec/SortedSet`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
@@ -119,10 +91,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14220">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14220" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -144,7 +116,8 @@
       <workItem from="1688491654107" duration="23345000" />
       <workItem from="1688841174302" duration="17319000" />
       <workItem from="1688891346416" duration="29959000" />
-      <workItem from="1689009475894" duration="21129000" />
+      <workItem from="1689009475894" duration="21436000" />
+      <workItem from="1689034839540" duration="195000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -202,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688928917609</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add movement animations logic + move turnstate metastate to battler">
+      <created>1689034692803</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689034692803</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +212,7 @@
     <MESSAGE value="Add TurnOrderResolver logic + basic BattlerTurnState and EnemyTurnState implementation + basic movement logic + various refactors" />
     <MESSAGE value="Update spritesheet for Lucario" />
     <MESSAGE value="Update slicing of Lucario spritesheet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update slicing of Lucario spritesheet" />
+    <MESSAGE value="Add movement animations logic + move turnstate metastate to battler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add movement animations logic + move turnstate metastate to battler" />
   </component>
 </project>
