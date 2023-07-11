@@ -8,7 +8,9 @@ namespace Battlers
 {
     public class BattlerInstance : MonoBehaviour
     {
-        public Battler Battler { get; set; }
+        public Battler battler;
+        public float moveSpeed = 2f;
+        
         public Team Team { get; set; }
         public Vector2 Position => transform.position;
 
@@ -37,13 +39,13 @@ namespace Battlers
 
         public void InitStatsForNewTurn()
         {
-            CurrentAtk = Battler.Attack;
-            CurrentDef = Battler.Defence;
-            CurrentSpAtk = Battler.SpecialAtk;
-            CurrentSpDef = Battler.SpecialDef;
-            CurrentMP = Battler.MovementPoints;
-            CurrentPP = Battler.PowerPoints;
-            CurrentRange = Battler.Range;
+            CurrentAtk = battler.Attack;
+            CurrentDef = battler.Defence;
+            CurrentSpAtk = battler.SpecialAtk;
+            CurrentSpDef = battler.SpecialDef;
+            CurrentMP = battler.MovementPoints;
+            CurrentPP = battler.PowerPoints;
+            CurrentRange = battler.Range;
         }
 
         public IEnumerator FollowPath(List<Node> path, Action onEndOfPathReached)
@@ -64,7 +66,7 @@ namespace Battlers
             _animator.TargetPos = destination;
             while (transform.position != destination)
             {
-                transform.position = Vector3.MoveTowards(transform.position, destination, 2 * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
                 yield return null;
             }
         }

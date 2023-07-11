@@ -6,15 +6,15 @@ namespace Battlers
 {
     public class BattlerAnimator : MonoBehaviour
     {
-        public Sprite[] idleNorthEast;
-        public Sprite[] idleSouthEast;
-        public Sprite[] idleSouthWest;
-        public Sprite[] idleNorthWest;
+        private Sprite[] _idleNorthEast;
+        private Sprite[] _idleSouthEast;
+        private Sprite[] _idleSouthWest;
+        private Sprite[] _idleNorthWest;
 
-        public Sprite[] walkNorthEast;
-        public Sprite[] walkSouthEast;
-        public Sprite[] walkSouthWest;
-        public Sprite[] walkNorthWest;
+        private Sprite[] _walkNorthEast;
+        private Sprite[] _walkSouthEast;
+        private Sprite[] _walkSouthWest;
+        private Sprite[] _walkNorthWest;
 
         private SpriteAnimator[] _idleAnimators;
         private SpriteAnimator[] _walkAnimators;
@@ -77,29 +77,29 @@ namespace Battlers
 
         public void SetAnimationSprites(Sprite[] battlerSprites)
         {
-            idleNorthWest = battlerSprites.Skip(0).Take(4).ToArray();
-            idleSouthWest = battlerSprites.Skip(4).Take(4).ToArray();
-            idleSouthEast = battlerSprites.Skip(8).Take(4).ToArray();
-            idleNorthEast = battlerSprites.Skip(12).Take(4).ToArray();
-            walkNorthWest = battlerSprites.Skip(16).Take(4).ToArray();
-            walkSouthWest = battlerSprites.Skip(20).Take(4).ToArray();
-            walkSouthEast = battlerSprites.Skip(24).Take(4).ToArray();
-            walkNorthEast = battlerSprites.Skip(28).Take(4).ToArray();
+            _idleNorthWest = battlerSprites.Skip(0).Take(4).ToArray();
+            _idleSouthWest = battlerSprites.Skip(4).Take(4).ToArray();
+            _idleSouthEast = battlerSprites.Skip(8).Take(4).ToArray();
+            _idleNorthEast = battlerSprites.Skip(12).Take(4).ToArray();
+            _walkNorthWest = battlerSprites.Skip(16).Take(4).ToArray();
+            _walkSouthWest = battlerSprites.Skip(20).Take(4).ToArray();
+            _walkSouthEast = battlerSprites.Skip(24).Take(4).ToArray();
+            _walkNorthEast = battlerSprites.Skip(28).Take(4).ToArray();
             
             _idleAnimators = new[]
             {
-                new SpriteAnimator(_spriteRenderer, idleNorthWest),
-                new SpriteAnimator(_spriteRenderer, idleSouthWest),
-                new SpriteAnimator(_spriteRenderer, idleSouthEast),
-                new SpriteAnimator(_spriteRenderer, idleNorthEast),
+                new SpriteAnimator(_spriteRenderer, _idleNorthWest),
+                new SpriteAnimator(_spriteRenderer, _idleSouthWest),
+                new SpriteAnimator(_spriteRenderer, _idleSouthEast),
+                new SpriteAnimator(_spriteRenderer, _idleNorthEast),
             };
             
             _walkAnimators = new[]
             {
-                new SpriteAnimator(_spriteRenderer, walkNorthWest),
-                new SpriteAnimator(_spriteRenderer, walkSouthWest),
-                new SpriteAnimator(_spriteRenderer, walkSouthEast),
-                new SpriteAnimator(_spriteRenderer, walkNorthEast),
+                new SpriteAnimator(_spriteRenderer, _walkNorthWest),
+                new SpriteAnimator(_spriteRenderer, _walkSouthWest),
+                new SpriteAnimator(_spriteRenderer, _walkSouthEast),
+                new SpriteAnimator(_spriteRenderer, _walkNorthEast),
             };
         }
     }

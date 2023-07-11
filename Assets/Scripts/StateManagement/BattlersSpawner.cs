@@ -25,7 +25,7 @@ namespace StateManagement
             GameObject battlerPrefab = Resources.Load<GameObject>("Prefabs/Battler");
             BattlerInstance battlerInstance = Object.Instantiate(battlerPrefab).GetComponent<BattlerInstance>();
             battlerInstance.gameObject.name = battler.Name;
-            battlerInstance.Battler = battler;
+            battlerInstance.battler = battler;
             SetPositionAndScale(position, battlerInstance);
             SetSprites(battler, battlerInstance);
             return battlerInstance;
@@ -37,6 +37,7 @@ namespace StateManagement
             var battlerAnimator = battlerInstance.gameObject.GetComponent<BattlerAnimator>();
             battlerAnimator.SetAnimationSprites(battler.Sprites);
             spriteRenderer.sortingOrder = 2;
+            spriteRenderer.enabled = true;
         }
 
         private void SetPositionAndScale(Vector2 position, BattlerInstance battlerInstance)

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add spritesheets &amp; animations for gardevoir &amp; swampert">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/SpeedComparer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/SpeedComparer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TurnOrderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TurnOrderResolver.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/605bf8b31fcb444b85176da963870aa746ac00/b2/f5fea8b4/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/BattleGrid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/NodeGrid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/PathfindingManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/PathfindingManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs" root0="FORCE_HIGHLIGHTING" />
@@ -121,7 +129,7 @@
       <workItem from="1688891346416" duration="29959000" />
       <workItem from="1689009475894" duration="21436000" />
       <workItem from="1689034839540" duration="195000" />
-      <workItem from="1689095114591" duration="1000000" />
+      <workItem from="1689095114591" duration="2935000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -193,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689095151092</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells">
+      <created>1689096835767</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689096835767</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +229,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype" />
     <MESSAGE value="Merge gitignore issues" />
@@ -225,6 +241,7 @@
     <MESSAGE value="Update slicing of Lucario spritesheet" />
     <MESSAGE value="Add movement animations logic + move turnstate metastate to battler" />
     <MESSAGE value="Add spritesheets &amp; animations for gardevoir &amp; swampert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add spritesheets &amp; animations for gardevoir &amp; swampert" />
+    <MESSAGE value="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells" />
   </component>
 </project>

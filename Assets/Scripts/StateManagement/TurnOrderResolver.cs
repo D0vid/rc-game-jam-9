@@ -12,7 +12,7 @@ namespace StateManagement
             var sortedParty = SortByDescendingSpeed(party);
             var sortedEnemies = SortByDescendingSpeed(enemies);
             
-            var doesPartyContainFastestBattler = sortedParty.Peek().Battler.Speed > sortedEnemies.Peek().Battler.Speed;
+            var doesPartyContainFastestBattler = sortedParty.Peek().battler.Speed > sortedEnemies.Peek().battler.Speed;
             var firstTeam = doesPartyContainFastestBattler ? sortedParty : sortedEnemies;
             var secondTeam = firstTeam.Equals(sortedParty) ? sortedEnemies : sortedParty;
 

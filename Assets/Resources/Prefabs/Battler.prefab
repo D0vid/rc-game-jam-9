@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f3599e278648dab3762a19374f2c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battler:
+    level: 0
+    battlerBase: {fileID: 0}
 --- !u!212 &6265559244060543613
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -54,7 +57,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670735786459338747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -88,7 +91,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1361048694, guid: 342994301cf607348b8a801905876a48, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +99,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
 --- !u!114 &7994015431021563581
@@ -111,46 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3705461907ed4af39cb9fc1d88c30de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleNorthEast:
-  - {fileID: 184266119, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -1892645275, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -221514105, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 880333957, guid: 342994301cf607348b8a801905876a48, type: 3}
-  idleSouthEast:
-  - {fileID: -466779251, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -1237269476, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 642190510, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 229343682, guid: 342994301cf607348b8a801905876a48, type: 3}
-  idleSouthWest:
-  - {fileID: -1361048694, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -69494133, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1515540619, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 206740145, guid: 342994301cf607348b8a801905876a48, type: 3}
-  idleNorthWest:
-  - {fileID: 526814967, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 655178516, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1335110955, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -1688418868, guid: 342994301cf607348b8a801905876a48, type: 3}
-  walkNorthEast:
-  - {fileID: -1417861673, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1375451552, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -1742019435, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -2071304156, guid: 342994301cf607348b8a801905876a48, type: 3}
-  walkSouthEast:
-  - {fileID: 267762922, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 87657633, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -1781142663, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 656809142, guid: 342994301cf607348b8a801905876a48, type: 3}
-  walkSouthWest:
-  - {fileID: -1165761054, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 771090290, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1053385512, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: -325668589, guid: 342994301cf607348b8a801905876a48, type: 3}
-  walkNorthWest:
-  - {fileID: 939488864, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1188810513, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1014699534, guid: 342994301cf607348b8a801905876a48, type: 3}
-  - {fileID: 1331436038, guid: 342994301cf607348b8a801905876a48, type: 3}
 --- !u!82 &3416784768097784193
 AudioSource:
   m_ObjectHideFlags: 0

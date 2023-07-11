@@ -10,7 +10,7 @@ namespace Battlers
                 return -1;
             if (y == null)
                 return 1;
-            return -x.Battler.Speed.CompareTo(y.Battler.Speed);
+            return -x.battler.Speed.CompareTo(y.battler.Speed);
         }
     }
 }
