@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911a2635d234e439105db6849ed3a79, type: 3}
+  m_Name: Bug
+  m_EditorClassIdentifier: 
+  icon: {fileID: -383808782, guid: 960259901e4f52d4d9ddc6131307f92f, type: 3}
+  resistances:
+  - {fileID: 11400000, guid: bd5e055a83ad40e42a96a95ab27301d3, type: 2}
+  - {fileID: 11400000, guid: 0fd7f7f5c0d533b4baf737d1e1cf2e2f, type: 2}
+  - {fileID: 11400000, guid: a3cb424f334859b4fba6e38deff811b0, type: 2}
+  weaknesses:
+  - {fileID: 11400000, guid: 051696e3bae50914bb8eeaff4798c44e, type: 2}
+  - {fileID: 11400000, guid: bfb4e3d2446d00746a5f4f09a9e50f83, type: 2}
+  - {fileID: 11400000, guid: 2b9301a36a11fa946a4ba61200423838, type: 2}
+  immunities: []

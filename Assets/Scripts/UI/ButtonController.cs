@@ -1,25 +1,28 @@
 using TMPro;
 using UnityEngine;
 
-public class ButtonController : MonoBehaviour
+namespace UI
 {
-    private TextMeshProUGUI _textMesh;
-
-    private void Awake()
+    public class ButtonController : MonoBehaviour
     {
-        _textMesh = GetComponentInChildren<TextMeshProUGUI>();
-    }
+        private TextMeshProUGUI _textMesh;
 
-    public void OnPointerEnter()
-    {
-        _textMesh.color = Color.yellow;
-        _textMesh.text = $"> {_textMesh.text} <";
-    }
+        private void Awake()
+        {
+            _textMesh = GetComponentInChildren<TextMeshProUGUI>();
+        }
 
-    public void OnPointerExit()
-    {
-        _textMesh.color = Color.white;
-        _textMesh.text = _textMesh.text.Replace("> ", "");
-        _textMesh.text = _textMesh.text.Replace(" <", "");
+        public void OnPointerEnter()
+        {
+            _textMesh.color = Color.yellow;
+            _textMesh.text = $"> {_textMesh.text} <";
+        }
+
+        public void OnPointerExit()
+        {
+            _textMesh.color = Color.white;
+            _textMesh.text = _textMesh.text.Replace("> ", "");
+            _textMesh.text = _textMesh.text.Replace(" <", "");
+        }
     }
 }

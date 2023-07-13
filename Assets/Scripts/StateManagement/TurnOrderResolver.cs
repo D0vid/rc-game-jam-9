@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
 using Battlers;
+using UnityEngine;
+using Utils;
 
 namespace StateManagement
 {
     public class TurnOrderResolver
     {
-        public Queue<BattlerInstance> ResolveTurnOrder(List<BattlerInstance> party, List<BattlerInstance> enemies)
+        private readonly BattleChannel _battleChannel;
+        
+        public TurnOrderResolver() => _battleChannel = Resources.Load<BattleChannel>("Channels/BattleChannel");
+
+        public void ResolveTurnOrder(List<BattlerInstance> party, List<BattlerInstance> enemies)
         {
             var finalQueue = new Queue<BattlerInstance>();
             
@@ -25,7 +31,7 @@ namespace StateManagement
             while(secondTeam.Count > 0)
                 finalQueue.Enqueue(secondTeam.Dequeue());
 
-            return finalQueue;
+            _battleChannel.RaiseTurnOrderResolved(finalQueue);
         }
 
         private Queue<BattlerInstance> SortByDescendingSpeed(List<BattlerInstance> battlers)

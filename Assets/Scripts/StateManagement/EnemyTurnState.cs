@@ -17,7 +17,7 @@ namespace StateManagement
 
         private IEnumerator EndTurn()
         {
-            yield return new WaitForSeconds(0.5f); // Hacky way to wait for the state to finish transitioning
+            yield return new WaitForSeconds(0.1f); // Hacky way to wait for the state to finish transitioning
             _battleManager.EndTurn();
         }
 

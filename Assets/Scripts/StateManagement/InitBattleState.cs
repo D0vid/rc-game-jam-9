@@ -16,7 +16,7 @@ namespace StateManagement
         {
             _battlersSpawner = new BattlersSpawner();
             _turnOrderResolver = new TurnOrderResolver();
-            _inputChannel = Resources.Load("Input/InputChannel") as InputChannel;
+            _inputChannel = Resources.Load<InputChannel>("Channels/InputChannel");
         }
 
         public override void Enter()
@@ -25,7 +25,7 @@ namespace StateManagement
             _battleManager = BattleManager.Instance;
             _battleManager.ShowPlacementPositions(true);
             SpawnBattlers();
-            _battleManager.BattlersQueue = _turnOrderResolver.ResolveTurnOrder(_battleManager.PartyBattlerInstances, _battleManager.EnemyBattlerInstances);
+            _turnOrderResolver.ResolveTurnOrder(_battleManager.PartyBattlerInstances, _battleManager.EnemyBattlerInstances);
             _dragAndDropHandler = new BattlersDragAndDropHandler(_battleManager);
         }
 
@@ -54,10 +54,7 @@ namespace StateManagement
             _inputChannel.mousePositionEvent -= _dragAndDropHandler.OnMouseDrag;
         }
 
-        private void OnReady()
-        {
-            _battleManager.StartPlayerOrEnemyTurn();
-        }
+        private void OnReady() => _battleManager.EndTurn();
 
         protected override void AddListeners()
         {

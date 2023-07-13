@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Grid;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Battlers
 {
-    public class BattlerInstance : MonoBehaviour
+    public class BattlerInstance : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         public Battler battler;
-        public float moveSpeed = 2f;
+        public float moveSpeed = 3.5f;
         
         public Team Team { get; set; }
         public Vector2 Position => transform.position;
@@ -19,11 +20,15 @@ namespace Battlers
         public int CurrentSpAtk { get; set; }
         public int CurrentSpDef { get; set; }
         public int CurrentHP { get; set; }
+        public int MaxHP => battler.MaxHealth;
+        public int PercentHP => CurrentHP / MaxHP;
         public int CurrentMP { get; set; }
         public int CurrentPP { get; set; }
         public int CurrentRange { get; set; }
         
         public BattlerState State { get; set; }
+
+        public bool IsHovered { get; set; }
 
         private BattlerAnimator _animator;
 
@@ -35,10 +40,16 @@ namespace Battlers
         private void Start()
         {
             State = BattlerState.Idle;
+            CurrentHP = MaxHP;
         }
+
+        public void OnPointerEnter(PointerEventData eventData) => IsHovered = true;
+
+        public void OnPointerExit(PointerEventData eventData) => IsHovered = false;
 
         public void InitStatsForNewTurn()
         {
+            State = BattlerState.Idle;
             CurrentAtk = battler.Attack;
             CurrentDef = battler.Defence;
             CurrentSpAtk = battler.SpecialAtk;

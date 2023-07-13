@@ -6,7 +6,7 @@ namespace Battlers
     [CreateAssetMenu(menuName = "ScriptableObjects/Type")]
     public class Type : ScriptableObject
     {
-        public new string name;
+        public Sprite icon;
         public Type[] resistances;
         public Type[] weaknesses;
         public Type[] immunities;

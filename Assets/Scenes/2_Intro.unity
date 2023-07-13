@@ -183,6 +183,7 @@ MonoBehaviour:
     your hearts, forging an unbreakable bond.
   textSpeed: 0.06
   speedUpTextSpeed: 0.01
+  inputChannel: {fileID: 11400000, guid: 2493c752d3d01d043907b3bd20d7fb81, type: 2}
 --- !u!114 &496904864
 MonoBehaviour:
   m_ObjectHideFlags: 0

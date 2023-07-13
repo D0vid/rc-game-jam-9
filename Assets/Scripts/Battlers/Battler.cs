@@ -9,20 +9,18 @@ namespace Battlers
         [SerializeField] private int level;
         [SerializeField] private BattlerBase battlerBase;
 
-        private readonly Guid _id;
-        
         public Battler(BattlerBase battlerBase, int level)
         {
-            _id = new Guid();
             this.battlerBase = battlerBase;
             this.level = level;
         }
-
-        public string Id => _id.ToString();
         
         public int DexNumber => battlerBase.dexNumber;
         public string Name => battlerBase.name;
+        
         public Sprite[] Sprites => battlerBase.sprites;
+        public Sprite TimelineSprite => battlerBase.timelineSprite;
+        public Sprite Portrait => battlerBase.portrait;
 
         public Type[] Typing => battlerBase.typing;
 
@@ -45,16 +43,6 @@ namespace Battlers
         public override string ToString()
         {
             return $"{Name} Lv.{Level}";
-        }
-
-        protected bool Equals(Battler other)
-        {
-            return _id.Equals(other._id);
-        }
-
-        public override int GetHashCode()
-        {
-            return _id.GetHashCode();
         }
 
         private int BaseStatCalculation(int baseValue)

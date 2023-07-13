@@ -22,7 +22,7 @@ namespace StateManagement
 
         private void Awake()
         {
-            _inputChannel = Resources.Load<InputChannel>("Input/InputChannel");
+            _inputChannel = Resources.Load<InputChannel>("Channels/InputChannel");
             _pathFindingManager = GetComponent<PathfindingManager>();
         }
 

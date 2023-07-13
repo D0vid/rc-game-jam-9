@@ -7,7 +7,10 @@ namespace Battlers
     public class BattlerBase : ScriptableObject
     {
         public int dexNumber;
+        
         public Sprite[] sprites;
+        public Sprite timelineSprite;
+        public Sprite portrait;
 
         public Type[] typing;
         

@@ -46,7 +46,11 @@ MonoBehaviour:
   - {fileID: 1188810513, guid: 342994301cf607348b8a801905876a48, type: 3}
   - {fileID: 1014699534, guid: 342994301cf607348b8a801905876a48, type: 3}
   - {fileID: 1331436038, guid: 342994301cf607348b8a801905876a48, type: 3}
-  typing: []
+  timelineSprite: {fileID: 21300000, guid: aafbe2845c2169d408900d962a5fe5e7, type: 3}
+  portrait: {fileID: 21300000, guid: 2ccdd7c30db03f740a31b15c58296697, type: 3}
+  typing:
+  - {fileID: 11400000, guid: bd5e055a83ad40e42a96a95ab27301d3, type: 2}
+  - {fileID: 11400000, guid: f268be9b9083c3844ba21e8b910d72cc, type: 2}
   health: 100
   attack: 100
   defence: 100

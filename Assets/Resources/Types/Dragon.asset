@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911a2635d234e439105db6849ed3a79, type: 3}
+  m_Name: Dragon
+  m_EditorClassIdentifier: 
+  icon: {fileID: -1711162478, guid: 960259901e4f52d4d9ddc6131307f92f, type: 3}
+  resistances:
+  - {fileID: 11400000, guid: 2b9301a36a11fa946a4ba61200423838, type: 2}
+  - {fileID: 11400000, guid: b51f25c2afe1fc94383733878dd7d26e, type: 2}
+  - {fileID: 11400000, guid: a3cb424f334859b4fba6e38deff811b0, type: 2}
+  - {fileID: 11400000, guid: 8d8fc39f411c8f24183fd43207b5f646, type: 2}
+  weaknesses:
+  - {fileID: 11400000, guid: 0eab86fd7692d8345bf03604301617bc, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 69c188e89b35d0d429a53d118a685665, type: 2}
+  immunities: []

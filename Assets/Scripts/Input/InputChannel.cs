@@ -98,6 +98,8 @@ namespace Input
                 readySkipTurn?.Invoke();
         }
 
+        public void SimulateReadySkipTurn() => readySkipTurn?.Invoke();
+
         public void OnCancelAction(InputAction.CallbackContext context)
         {
             if (context.performed)

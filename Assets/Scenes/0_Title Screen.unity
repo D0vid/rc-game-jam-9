@@ -1008,6 +1008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 844e615d5e40edf4ca29716a5c3a8bd8, type: 3}
   audioSource: {fileID: 84149187}
+  inputChannel: {fileID: 11400000, guid: 2493c752d3d01d043907b3bd20d7fb81, type: 2}
 --- !u!4 &1920780411
 Transform:
   m_ObjectHideFlags: 0

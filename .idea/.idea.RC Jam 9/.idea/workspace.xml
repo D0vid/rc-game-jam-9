@@ -1,15 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_icon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_portrait.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_portrait.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/arrow.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/battler_info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/battler_info.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/button.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/timeline_card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/timeline_card.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/timeline_card_red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/timeline_card_red.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/type_icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/type_icons.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/whitesquare.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/UI/whitesquare.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Channels.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Channels/BattleChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Channels/BattleChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Channels/InputChannel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Channels/InputChannel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/BattlerStatus.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/BattlerStatus.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TimelineAlly.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TimelineAlly.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TimelineEnemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TimelineEnemy.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Bug.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Bug.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Dark.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Dark.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Dragon.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Dragon.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Electric.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Electric.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fairy.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fairy.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fighting.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fighting.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fire.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Fire.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Flying.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Flying.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ghost.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ghost.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Grass.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Grass.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ground.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ground.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ice.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Ice.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Normal.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Normal.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Poison.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Poison.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Psychic.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Psychic.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Rock.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Rock.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Steel.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Steel.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Water.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Types/Water.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/QueueUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/QueueUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Input.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Input/InputChannel.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Input/InputChannel.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Battler.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/0_Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/0_Title Screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/2_Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/2_Intro.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/SpeedComparer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/SpeedComparer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/PathfindingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Type.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Type.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Type.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Type.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/EnemyTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/EnemyTurnState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/InitBattleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/InitBattleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TurnOrderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TurnOrderResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/PriorityQueue.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,16 +133,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/605bf8b31fcb444b85176da963870aa746ac00/b2/f5fea8b4/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/BattleGrid.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/NodeGrid.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/PathfindingManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Grid/PathfindingManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/FadeTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TextFader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TextTyper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/TitleScreenController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.common@8.0.1/Editor/TextureGenerator/TextureGeneratorHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections/FixedStringInternalMethods.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@3.0.24/Rider/Editor/RiderScriptEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/InputManagerStateMonitors.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,11 +150,15 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/WrapperWindowFixture.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasGroupInheritedAlpha.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Windows.old/Users/David/Unity/2023/Pokémon Tactics/Assets/GameController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="SWEA" />
+  </component>
   <component name="ProjectId" id="2RxtUnGqSTFoGlmda6GYlUHL48f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -129,7 +237,8 @@
       <workItem from="1688891346416" duration="29959000" />
       <workItem from="1689009475894" duration="21436000" />
       <workItem from="1689034839540" duration="195000" />
-      <workItem from="1689095114591" duration="2935000" />
+      <workItem from="1689095114591" duration="3857000" />
+      <workItem from="1689173812658" duration="20697000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -208,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689096835767</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Only show battlers when they are fully loaded">
+      <created>1689098186933</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689098186933</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +358,7 @@
     <MESSAGE value="Add movement animations logic + move turnstate metastate to battler" />
     <MESSAGE value="Add spritesheets &amp; animations for gardevoir &amp; swampert" />
     <MESSAGE value="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prevent battlers from occupying the same cell by removing battler positions from the walkable cells" />
+    <MESSAGE value="Only show battlers when they are fully loaded" />
+    <option name="LAST_COMMIT_MESSAGE" value="Only show battlers when they are fully loaded" />
   </component>
 </project>
