@@ -25,7 +25,7 @@ namespace UI.BattleUI
 
         private BattlerInstance _currentBattler;
         private BattlerInstance _displayedBattler;
-        private BattlerInstance _previouslyDisplayedBattler;
+        private BattlerInstance _hoveredBattler;
         private List<BattlerInstance> _battlers;
 
         private void Update()
@@ -33,15 +33,7 @@ namespace UI.BattleUI
             if (_battlers == null || _currentBattler == null)
                 return;
 
-            BattlerInstance foundBattler = null;
-            
-            foreach (var battler in _battlers)
-            {
-                if (battler.IsHovered)
-                    foundBattler = battler;
-            }
-
-            _displayedBattler = foundBattler ? foundBattler : _currentBattler;
+            _displayedBattler = _hoveredBattler ? _hoveredBattler : _currentBattler;
 
             UpdateBattlerStatus(_displayedBattler);
         }
@@ -73,16 +65,24 @@ namespace UI.BattleUI
             _battlers = new List<BattlerInstance>(battlers);
         }
 
+        private void OnStartedHoveringBattler(BattlerInstance battler) => _hoveredBattler = battler;
+
+        private void OnStoppedHoveringBattler(BattlerInstance battler) => _hoveredBattler = null;
+
         private void OnEnable()
         {
             battleChannel.currentBattlerChangedEvent += OnCurrentBattlerChanged;
             battleChannel.turnOrderResolvedEvent += OnTurnOrderResolved;
+            battleChannel.startedHoveringBattlerEvent += OnStartedHoveringBattler;
+            battleChannel.stoppedHoveringBattlerEvent += OnStoppedHoveringBattler;
         }
 
         private void OnDisable()
         {
             battleChannel.currentBattlerChangedEvent -= OnCurrentBattlerChanged;
             battleChannel.turnOrderResolvedEvent -= OnTurnOrderResolved;
+            battleChannel.startedHoveringBattlerEvent -= OnStartedHoveringBattler;
+            battleChannel.stoppedHoveringBattlerEvent -= OnStoppedHoveringBattler;
         }
     }
 }

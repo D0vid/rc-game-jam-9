@@ -11,6 +11,9 @@ namespace Utils
     {
         public event UnityAction<Queue<BattlerInstance>> turnOrderResolvedEvent;
         public event UnityAction<BattlerInstance> currentBattlerChangedEvent;
+        public event UnityAction<BattlerInstance> startedHoveringBattlerEvent;
+        public event UnityAction<BattlerInstance> stoppedHoveringBattlerEvent;
+        public event UnityAction<BattlerInstance> battlerStatsChangedEvent; 
 
         public void RaiseTurnOrderResolved(Queue<BattlerInstance> battlersQueue)
         {
@@ -21,5 +24,16 @@ namespace Utils
         {
             currentBattlerChangedEvent?.Invoke(battler);
         }
+
+        public void RaiseStartedHoveringBattler(BattlerInstance battler)
+        {
+            startedHoveringBattlerEvent?.Invoke(battler);
+        }
+
+        public void RaiseStoppedHoveringBattler(BattlerInstance battler)
+        {
+            stoppedHoveringBattlerEvent?.Invoke(battler);
+        }
+
     }
 }

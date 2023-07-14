@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utils;
 
 namespace Battlers
 {
     public class BattlerInstance : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        public BattleChannel battleChannel;
         public Battler battler;
         public float moveSpeed = 3.5f;
         
@@ -28,8 +30,6 @@ namespace Battlers
         
         public BattlerState State { get; set; }
 
-        public bool IsHovered { get; set; }
-
         private BattlerAnimator _animator;
 
         private void Awake()
@@ -47,11 +47,12 @@ namespace Battlers
             CurrentMP = battler.MovementPoints;
             CurrentPP = battler.PowerPoints;
             CurrentRange = battler.Range;
+            CurrentHP = battler.MaxHealth;
         }
 
-        public void OnPointerEnter(PointerEventData eventData) => IsHovered = true;
+        public void OnPointerEnter(PointerEventData eventData) => battleChannel.RaiseStartedHoveringBattler(this);
 
-        public void OnPointerExit(PointerEventData eventData) => IsHovered = false;
+        public void OnPointerExit(PointerEventData eventData) => battleChannel.RaiseStoppedHoveringBattler(this);
 
         public void ResetStats()
         {

@@ -4,8 +4,9 @@
     <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/17484a9af6b944dea5cd9be4dbb0da2c171c00/3e/f8d6f345/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/605bf8b31fcb444b85176da963870aa746ac00/b2/f5fea8b4/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -129,7 +132,8 @@
       <workItem from="1689034839540" duration="195000" />
       <workItem from="1689095114591" duration="3857000" />
       <workItem from="1689173812658" duration="21362000" />
-      <workItem from="1689353942129" duration="745000" />
+      <workItem from="1689353942129" duration="824000" />
+      <workItem from="1689354944163" duration="2213000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -229,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689285229086</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Reset stats on turn end instead of on turn start">
+      <created>1689354719933</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689354719933</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +277,7 @@
     <MESSAGE value="Only show battlers when they are fully loaded" />
     <MESSAGE value="Add big part of battle UI, responsive to hovering of battlers and changes in stats" />
     <MESSAGE value="Disable prefab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Disable prefab" />
+    <MESSAGE value="Reset stats on turn end instead of on turn start" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reset stats on turn end instead of on turn start" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 ﻿using Battlers;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace StateManagement
 {
@@ -24,6 +25,7 @@ namespace StateManagement
         {
             GameObject battlerPrefab = Resources.Load<GameObject>("Prefabs/Battler");
             BattlerInstance battlerInstance = Object.Instantiate(battlerPrefab).GetComponent<BattlerInstance>();
+            battlerInstance.battleChannel = Resources.Load<BattleChannel>("Channels/BattleChannel");;
             battlerInstance.gameObject.name = battler.Name;
             battlerInstance.battler = battler;
             SetPositionAndScale(position, battlerInstance);
