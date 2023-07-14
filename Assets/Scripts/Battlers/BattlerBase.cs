@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Battlers
 {
@@ -21,7 +20,7 @@ namespace Battlers
         public int specialDef = 100;
         public int speed = 100;
 
-        public Move[] moveSet;
+        public Skill[] skills;
         public Effect ability;
         
         public int powerPoints = 6;

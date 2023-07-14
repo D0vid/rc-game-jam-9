@@ -13,27 +13,12 @@ namespace Utils
         public event UnityAction<BattlerInstance> currentBattlerChangedEvent;
         public event UnityAction<BattlerInstance> startedHoveringBattlerEvent;
         public event UnityAction<BattlerInstance> stoppedHoveringBattlerEvent;
-        public event UnityAction<BattlerInstance> battlerStatsChangedEvent; 
+        public event UnityAction<Skill> skillSelectedEvent;
 
-        public void RaiseTurnOrderResolved(Queue<BattlerInstance> battlersQueue)
-        {
-            turnOrderResolvedEvent?.Invoke(battlersQueue);
-        }
-
-        public void RaiseCurrentBattlerChanged(BattlerInstance battler)
-        {
-            currentBattlerChangedEvent?.Invoke(battler);
-        }
-
-        public void RaiseStartedHoveringBattler(BattlerInstance battler)
-        {
-            startedHoveringBattlerEvent?.Invoke(battler);
-        }
-
-        public void RaiseStoppedHoveringBattler(BattlerInstance battler)
-        {
-            stoppedHoveringBattlerEvent?.Invoke(battler);
-        }
-
+        public void RaiseTurnOrderResolved(Queue<BattlerInstance> battlersQueue) => turnOrderResolvedEvent?.Invoke(battlersQueue);
+        public void RaiseCurrentBattlerChanged(BattlerInstance battler) => currentBattlerChangedEvent?.Invoke(battler);
+        public void RaiseStartedHoveringBattler(BattlerInstance battler) => startedHoveringBattlerEvent?.Invoke(battler);
+        public void RaiseStoppedHoveringBattler(BattlerInstance battler) => stoppedHoveringBattlerEvent?.Invoke(battler);
+        public void RaiseSkillSelected(Skill skill) => skillSelectedEvent?.Invoke(skill);
     }
 }

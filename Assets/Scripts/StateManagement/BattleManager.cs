@@ -64,17 +64,17 @@ namespace StateManagement
         }
 
         public void ShowPlacementPositions(bool show) => _battleGrid.ShowPlacementPositions(show);
-
         public Vector2 SnapPositionToGrid(Vector2 mousePos) => _battleGrid.SnapPositionToGrid(mousePos);
-        
         public bool IsWalkable(Vector2 mousePos) => _battleGrid.IsWalkable(mousePos);
-
         public void HighlightPath(List<Node> path) => _battleGrid.HighlightPath(path);
-
-        public void RemoveHighlights() => _battleGrid.RemovePathHighlight();
-
-        public void SimulateReadyEndTurn() => inputChannel.SimulateReadySkipTurn(); // Used for button
+        public void RemoveHighlights() => _battleGrid.RemoveAllHighlights();
+        public List<Node> GetNodesInArea(Vector2 startingPos, int range, bool inLine) => _battleGrid.GetNodesInArea(startingPos, range, inLine);
+        public Node GetNodeForWorldPos(Vector2 worldPos) => _battleGrid.GetNodeForWorldPos(worldPos);
+        public List<Node> FilterTargetableNodes(Vector2 originPos, List<Node> nodes) => _battleGrid.FilterTargetableNodes(originPos, nodes);
+        public void HighlightSkillRange(List<Node> nodesInRange, List<Node> targetableNodes) => _battleGrid.HighlightSkillRange(nodesInRange, targetableNodes);
         
+        public void SimulateReadyEndTurn() => inputChannel.SimulateReadySkipTurn();
+
         private void OnTurnOrderResolved(Queue<BattlerInstance> battlersQueue) => _battlersQueue = battlersQueue;
 
         private void DetermineNextTurn()
@@ -86,7 +86,6 @@ namespace StateManagement
         }
 
         private void OnEnable() => battleChannel.turnOrderResolvedEvent += OnTurnOrderResolved;
-
         private void OnDisable() => battleChannel.turnOrderResolvedEvent -= OnTurnOrderResolved;
     }
 }

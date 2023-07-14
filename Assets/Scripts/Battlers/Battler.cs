@@ -31,7 +31,7 @@ namespace Battlers
         public int SpecialDef => BaseStatCalculation(battlerBase.specialDef);
         public int Speed => BaseStatCalculation(battlerBase.speed);
 
-        public Move[] MoveSet => battlerBase.moveSet;
+        public Skill[] Skills => battlerBase.skills;
         public Effect Ability => battlerBase.ability;
 
         public int PowerPoints => battlerBase.powerPoints;

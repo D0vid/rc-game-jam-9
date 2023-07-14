@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,6 +12,7 @@ namespace Grid
         private int _gridSizeX, _gridSizeY;
 
         protected Dictionary<Vector3Int, Node> NodeGridDictionary;
+        protected IEnumerable<Node> AllNodes => NodeGridDictionary.Select(node => node.Value).ToList();
 
         public int MaxSize => _gridSizeX * _gridSizeY;
 

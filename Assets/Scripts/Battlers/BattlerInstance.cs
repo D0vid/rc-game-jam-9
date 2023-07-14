@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,7 +16,9 @@ namespace Battlers
         public float moveSpeed = 3.5f;
         
         public Team Team { get; set; }
+        
         public Vector2 Position => transform.position;
+        public Vector2 Destination { get; set; }
 
         public int CurrentAtk { get; set; }
         public int CurrentDef { get; set; }
@@ -27,6 +30,7 @@ namespace Battlers
         public int CurrentMP { get; set; }
         public int CurrentPP { get; set; }
         public int CurrentRange { get; set; }
+        public List<Skill> Skills => battler.Skills.ToList();
         
         public BattlerState State { get; set; }
 
@@ -40,6 +44,7 @@ namespace Battlers
         private void Start()
         {
             State = BattlerState.Idle;
+            Destination = Position;
             CurrentAtk = battler.Attack;
             CurrentDef = battler.Defence;
             CurrentSpAtk = battler.SpecialAtk;
@@ -65,6 +70,7 @@ namespace Battlers
         public IEnumerator FollowPath(List<Node> path, Action onEndOfPathReached)
         {
             State = BattlerState.Moving;
+            Destination = path[^1].WorldPosition;
             foreach (Node node in path)
             {
                 yield return StartCoroutine(Move(node));
@@ -76,11 +82,11 @@ namespace Battlers
 
         private IEnumerator Move(Node destinationNode)
         {
-            Vector3 destination = destinationNode.WorldPosition;
-            _animator.TargetPos = destination;
-            while (transform.position != destination)
+            Vector3 step = destinationNode.WorldPosition;
+            _animator.TargetPos = step;
+            while (transform.position != step)
             {
-                transform.position = Vector3.MoveTowards(transform.position, destination, moveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, step, moveSpeed * Time.deltaTime);
                 yield return null;
             }
         }

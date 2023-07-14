@@ -13,21 +13,21 @@ namespace Grid
             CellPosition = cellPos;
         }
 
-        public bool Walkable { get; private set; }
+        public bool Walkable { get; }
 
-        public Vector3 WorldPosition { get; private set; }
+        public Vector3 WorldPosition { get; }
 
-        public float WorldPositionX { get => WorldPosition.x; }
-        public float WorldPositionY { get => WorldPosition.y; }
+        public float WorldPositionX => WorldPosition.x;
+        public float WorldPositionY => WorldPosition.y;
 
-        public Vector3Int CellPosition { get; private set; }
+        public Vector3Int CellPosition { get; }
 
-        public int CellPositionX { get => CellPosition.x; }
-        public int CellPositionY { get => CellPosition.y; }
+        public int CellPositionX => CellPosition.x;
+        public int CellPositionY => CellPosition.y;
 
         public int GCost { get; set; }
         public int HCost { get; set; }
-        public int FCost { get => GCost + HCost; }
+        public int FCost => GCost + HCost;
 
         public Node Parent { get; set; }
 

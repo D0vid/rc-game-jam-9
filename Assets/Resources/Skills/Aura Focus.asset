@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd94f726d9c4e838d97e1584ceec98b, type: 3}
+  m_Name: Aura Focus
+  m_EditorClassIdentifier: 
+  description: Raises attack, special attack, PP and MP.
+  icon: {fileID: 21300000, guid: 096b7065490bd0e4a886a89431666b05, type: 3}
+  animation: {fileID: 0}
+  type: {fileID: 11400000, guid: bd5e055a83ad40e42a96a95ab27301d3, type: 2}
+  category: 2
+  effects:
+  - {fileID: 0}
+  damage: 0
+  cost: 0
+  cooldown: 0
+  accuracy: 0
+  criticalRate: 0
+  range: 0
+  fixedRange: 0
+  selfCast: 1
+  lineRestricted: 0
+  lineOfSightRestricted: 0
+  shape:
+    gridSize: {x: 5, y: 5}
+    cellSize: {x: 32, y: 16}
+    cells:
+    - row: 0000000000000000010000000000000000000000
+    - row: 0000000001000000010000000100000000000000
+    - row: 0100000001000000010000000100000001000000
+    - row: 0000000001000000010000000100000000000000
+    - row: 0000000000000000010000000000000000000000

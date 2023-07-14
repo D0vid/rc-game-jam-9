@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Battlers
 {
-    [CreateAssetMenu(menuName = "ScriptableObjects/Move")]
-    public class Move : ScriptableObject
+    [CreateAssetMenu(menuName = "ScriptableObjects/Skill")]
+    public class Skill : ScriptableObject
     {
-        public new string name;
         [TextArea] public string description;
         public Sprite icon;
         public Animation animation;
@@ -33,6 +32,7 @@ namespace Battlers
     public enum Category
     {
         Physical,
-        Special
+        Special,
+        Status
     }
 }
