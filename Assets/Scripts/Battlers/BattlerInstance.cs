@@ -40,20 +40,22 @@ namespace Battlers
         private void Start()
         {
             State = BattlerState.Idle;
-            CurrentHP = MaxHP;
+            CurrentAtk = battler.Attack;
+            CurrentDef = battler.Defence;
+            CurrentSpAtk = battler.SpecialAtk;
+            CurrentSpDef = battler.SpecialDef;
+            CurrentMP = battler.MovementPoints;
+            CurrentPP = battler.PowerPoints;
+            CurrentRange = battler.Range;
         }
 
         public void OnPointerEnter(PointerEventData eventData) => IsHovered = true;
 
         public void OnPointerExit(PointerEventData eventData) => IsHovered = false;
 
-        public void InitStatsForNewTurn()
+        public void ResetStats()
         {
             State = BattlerState.Idle;
-            CurrentAtk = battler.Attack;
-            CurrentDef = battler.Defence;
-            CurrentSpAtk = battler.SpecialAtk;
-            CurrentSpDef = battler.SpecialDef;
             CurrentMP = battler.MovementPoints;
             CurrentPP = battler.PowerPoints;
             CurrentRange = battler.Range;

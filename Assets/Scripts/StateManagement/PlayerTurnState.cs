@@ -31,7 +31,6 @@ namespace StateManagement
             base.Enter();
             _battleManager = BattleManager.Instance;
             _currentBattler = _battleManager.CurrentBattler;
-            _currentBattler.InitStatsForNewTurn();
             Debug.Log($"> Now in PlayerTurnState - Battler : {_battleManager.CurrentBattler.name}");
         }
 

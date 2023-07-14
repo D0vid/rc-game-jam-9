@@ -56,6 +56,7 @@ namespace StateManagement
             {
                 var currentTurnBattler = _battlersQueue.Dequeue();
                 _battlersQueue.Enqueue(currentTurnBattler);
+                currentTurnBattler.ResetStats();
             }
             battleChannel.RaiseCurrentBattlerChanged(_battlersQueue.Peek());
             TurnNumber++;
