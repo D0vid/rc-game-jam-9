@@ -57,7 +57,8 @@ MonoBehaviour:
   specialAtk: 100
   specialDef: 100
   speed: 90
-  moveSet: []
+  skills:
+  - {fileID: 11400000, guid: bd6618245eb20594095caf10e6875ea5, type: 2}
   ability: {fileID: 0}
   powerPoints: 12
   movementPoints: 6
