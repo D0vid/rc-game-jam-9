@@ -1,45 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Improve battle UI update loop + fix max health not showing at start of battle">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Effects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Effects/PlusTwoMP.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Effects/PlusTwoMP.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Effects/PlusTwoPP.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Effects/PlusTwoPP.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Skill.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Skill.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/SkillBarManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/SkillBarManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/TransformUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/TransformUtils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/VectorUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/VectorUtils.cs.meta" afterDir="false" />
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Bubblebeam.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Bubblebeam.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillShapeParser.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillShapeParser.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Array2DIntUtils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Array2DIntUtils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Ability.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Ability.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Skill.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Move.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Skill.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BattleChannel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +43,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/605bf8b31fcb444b85176da963870aa746ac00/b2/f5fea8b4/ArraySortHelper`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7a94ee03d7bd4e0497dc23a921f1b334a000/1f/9ca6dbef/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/David/Unity/RC Jam 9/Assets/Scripts/Battlers/BattlerInstance.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ButtonController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,9 +57,12 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.6.1/InputSystem/Plugins/PlayerInput/DefaultInputActions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Dropdown.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/CanvasElementsMaintainValidPositionsWhenCameraOrthoSizeIsZero.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/WrapperWindowFixture.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasGroupInheritedAlpha.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasResizeCorrectlyForRenderTexture.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CreateSceneUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Windows.old/Users/David/Unity/2023/Pokémon Tactics/Assets/GameController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -137,10 +123,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7460">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="7460" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -167,7 +153,8 @@
       <workItem from="1689095114591" duration="3857000" />
       <workItem from="1689173812658" duration="21362000" />
       <workItem from="1689353942129" duration="824000" />
-      <workItem from="1689354944163" duration="19870000" />
+      <workItem from="1689354944163" duration="20609000" />
+      <workItem from="1689411816759" duration="14304000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -281,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689358751999</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add ability selection with line of sights display">
+      <created>1689377721995</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689377721995</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,6 +314,26 @@
     <MESSAGE value="Disable prefab" />
     <MESSAGE value="Reset stats on turn end instead of on turn start" />
     <MESSAGE value="Improve battle UI update loop + fix max health not showing at start of battle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve battle UI update loop + fix max health not showing at start of battle" />
+    <MESSAGE value="Add ability selection with line of sights display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ability selection with line of sights display" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs</url>
+          <line>50</line>
+          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\PlayerTurnState.cs" initialLine="50" containingFunctionPresentation="method 'OnMouseHover'">
+            <startOffsets>
+              <option value="1489" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1559" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

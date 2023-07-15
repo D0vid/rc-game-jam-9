@@ -2,19 +2,27 @@
 using Battlers;
 using Grid;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace StateManagement
 {
     public class SkillCastHandler
     {
         private readonly BattleManager _battleManager;
+        private readonly SkillShapeParser _skillShapeParser;
+        private readonly Camera _mainCamera;
 
-        private List<Node> _currentTargetableNodes;
+        private List<Node> _currentTargetableNodes; // TODO remove Node references and use Vector2 instead
         private Skill _currentSkill;
+        private List<Node> _currentShape;
 
         public SkillCastHandler(BattleManager battleManager)
         {
             _battleManager = battleManager;
+            _currentTargetableNodes = new List<Node>();
+            _currentShape = new List<Node>();
+            _skillShapeParser = new SkillShapeParser(_battleManager);
+            _mainCamera = Camera.main;
         }
 
         public void HandleSkillSelected(Skill skill)
@@ -32,6 +40,7 @@ namespace StateManagement
                 : nodesInRange;
             _battleManager.HighlightSkillRange(nodesInRange, _currentTargetableNodes);
             _currentSkill = skill;
+            OnMouseHover(_mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
         }
 
         private List<Node> DetermineNodesInRange(Skill skill, Vector2 battlerPos)
@@ -40,6 +49,44 @@ namespace StateManagement
             if (!skill.selfCast)
                 nodesInRange.Remove(_battleManager.GetNodeForWorldPos(battlerPos));
             return nodesInRange;
+        }
+
+        public void OnMouseHover(Vector2 mousePos)
+        {
+            if (_battleManager.CurrentBattler.State == BattlerState.Casting)
+            {
+                _battleManager.RemoveSkillShapeHighlight();
+                if (IsTargetable(mousePos))
+                {
+                    _currentShape = _skillShapeParser.ParseSkill(_currentSkill, mousePos);
+                    _battleManager.HighlightSkillShape(_currentShape);
+                }
+            }
+        }
+
+        public void OnMouseClick(Vector2 mousePos)
+        {
+            if (IsTargetable(mousePos))
+            {
+                var mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
+                _battleManager.CurrentBattler.Cast(_currentSkill, mousePosSnapped);
+                _battleManager.RemoveAllHighlights();
+            }
+            StopCasting();
+        }
+
+        private void StopCasting()
+        {
+            if (_battleManager.CurrentBattler.State == BattlerState.Casting)
+            {
+                _battleManager.CurrentBattler.State = BattlerState.Idle;
+            }
+        }
+
+        private bool IsTargetable(Vector2 position)
+        {
+            var node = _battleManager.GetNodeForWorldPos(position);
+            return _currentTargetableNodes.Contains(node);
         }
     }
 }

@@ -51,6 +51,11 @@ namespace Grid
             return result;
         }
 
+        public Node GetNodeForCellPos(Vector3Int cellPos)
+        {
+            return NodeGridDictionary.ContainsKey(cellPos) ? NodeGridDictionary[cellPos] : null;
+        }
+
         public bool IsWalkable(Vector2 worldPos)
         {
             Node node = GetNodeForWorldPos(worldPos);

@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Utils
 {
     public class SpriteAnimator
     {
         private readonly SpriteRenderer _spriteRenderer;
-        public readonly Sprite[] _frames;
+        private readonly Sprite[] _frames;
         private readonly float _frameRate;
         
         private int _currentFrame;

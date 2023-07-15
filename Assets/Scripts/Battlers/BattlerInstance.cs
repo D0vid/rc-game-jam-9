@@ -31,10 +31,19 @@ namespace Battlers
         public int CurrentPP { get; set; }
         public int CurrentRange { get; set; }
         public List<Skill> Skills => battler.Skills.ToList();
-        
-        public BattlerState State { get; set; }
+
+        public BattlerState State
+        {
+            get => _state;
+            set
+            {
+                _state = value;
+                Debug.Log("New state : "+ _state);
+            }
+        }
 
         private BattlerAnimator _animator;
+        private BattlerState _state;
 
         private void Awake()
         {
@@ -88,6 +97,16 @@ namespace Battlers
             {
                 transform.position = Vector3.MoveTowards(transform.position, step, moveSpeed * Time.deltaTime);
                 yield return null;
+            }
+        }
+
+        public void Cast(Skill currentSkill, Vector2 targetPos)
+        {
+            if (currentSkill.cost <= CurrentPP)
+            {
+                CurrentPP -= currentSkill.cost;
+                if (targetPos != Position)
+                    _animator.FaceTowards(targetPos);
             }
         }
     }

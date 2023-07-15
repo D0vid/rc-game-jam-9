@@ -67,11 +67,14 @@ namespace StateManagement
         public Vector2 SnapPositionToGrid(Vector2 mousePos) => _battleGrid.SnapPositionToGrid(mousePos);
         public bool IsWalkable(Vector2 mousePos) => _battleGrid.IsWalkable(mousePos);
         public void HighlightPath(List<Node> path) => _battleGrid.HighlightPath(path);
-        public void RemoveHighlights() => _battleGrid.RemoveAllHighlights();
+        public void RemoveAllHighlights() => _battleGrid.RemoveAllHighlights();
         public List<Node> GetNodesInArea(Vector2 startingPos, int range, bool inLine) => _battleGrid.GetNodesInArea(startingPos, range, inLine);
         public Node GetNodeForWorldPos(Vector2 worldPos) => _battleGrid.GetNodeForWorldPos(worldPos);
+        public Node GetNodeForCellPos(Vector3Int cellPos) => _battleGrid.GetNodeForCellPos(cellPos);
         public List<Node> FilterTargetableNodes(Vector2 originPos, List<Node> nodes) => _battleGrid.FilterTargetableNodes(originPos, nodes);
         public void HighlightSkillRange(List<Node> nodesInRange, List<Node> targetableNodes) => _battleGrid.HighlightSkillRange(nodesInRange, targetableNodes);
+        public void RemoveSkillShapeHighlight() => _battleGrid.RemoveSkillShapeHighlight();
+        public void HighlightSkillShape(List<Node> shape) => _battleGrid.HighlightSkillShape(shape);
         
         public void SimulateReadyEndTurn() => inputChannel.SimulateReadySkipTurn();
 

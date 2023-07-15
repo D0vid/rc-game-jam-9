@@ -17,9 +17,11 @@ namespace Input
         public event UnityAction actionCanceled;
 
         private DefaultInput _defaultInput;
+        private Camera _mainCamera;
 
         private void OnEnable()
         {
+            _mainCamera = Camera.main;
             if (_defaultInput == null)
             {
                 _defaultInput = new DefaultInput();
@@ -39,21 +41,21 @@ namespace Input
             if (context.performed)
             {
                 Vector2 mousePosition = _defaultInput.Default.MousePosition.ReadValue<Vector2>();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
                 mouseClickEvent?.Invoke(mousePosition);
             }
 
             if (context.started)
             {
                 Vector2 mousePosition = _defaultInput.Default.MousePosition.ReadValue<Vector2>();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
                 mouseBeginDragEvent?.Invoke(mousePosition);
             }
 
             if (context.canceled)
             {
                 Vector2 mousePosition = _defaultInput.Default.MousePosition.ReadValue<Vector2>();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
                 mouseEndDragEvent?.Invoke(mousePosition);
             }
         }
@@ -63,7 +65,7 @@ namespace Input
             if (context.performed)
             {
                 Vector2 mousePosition = _defaultInput.Default.MousePosition.ReadValue<Vector2>();
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                mousePosition = _mainCamera.ScreenToWorldPoint(mousePosition);
                 mousePositionEvent?.Invoke(mousePosition);
             }
         }

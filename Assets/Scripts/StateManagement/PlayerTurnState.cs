@@ -33,10 +33,10 @@ namespace StateManagement
 
         public override void Enter()
         {
-            base.Enter();
             _battleManager = BattleManager.Instance;
             _skillCastHandler = new SkillCastHandler(_battleManager);
             _currentBattler = _battleManager.CurrentBattler;
+            base.Enter();
             Debug.Log($"> Now in PlayerTurnState - Battler : {_battleManager.CurrentBattler.name}");
         }
 
@@ -78,7 +78,7 @@ namespace StateManagement
 
         private void ResetPath()
         {
-            _battleManager.RemoveHighlights();
+            _battleManager.RemoveAllHighlights();
             _currentPath?.Clear();
         }
 
@@ -113,13 +113,15 @@ namespace StateManagement
         private void OnActionCancelled()
         {
             _currentBattler.State = BattlerState.Idle;
-            _battleManager.RemoveHighlights();
+            _battleManager.RemoveAllHighlights();
         }
 
         protected override void AddListeners()
         {
             _inputChannel.mousePositionEvent += OnMouseHover;
+            _inputChannel.mousePositionEvent += _skillCastHandler.OnMouseHover;
             _inputChannel.mouseClickEvent += OnMouseClick;
+            _inputChannel.mouseClickEvent += _skillCastHandler.OnMouseClick;
             _inputChannel.readySkipTurn += OnEndTurn;
             _battleChannel.skillSelectedEvent += OnSkillSelected;
             _inputChannel.hotkeyPressed += OnHotkeyPressed;
@@ -129,7 +131,9 @@ namespace StateManagement
         protected override void RemoveListeners()
         {
             _inputChannel.mousePositionEvent -= OnMouseHover;
+            _inputChannel.mousePositionEvent -= _skillCastHandler.OnMouseHover;
             _inputChannel.mouseClickEvent -= OnMouseClick;
+            _inputChannel.mouseClickEvent -= _skillCastHandler.OnMouseClick;
             _inputChannel.readySkipTurn -= OnEndTurn;
             _battleChannel.skillSelectedEvent -= OnSkillSelected;
             _inputChannel.hotkeyPressed -= OnHotkeyPressed;

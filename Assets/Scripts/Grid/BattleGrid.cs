@@ -19,6 +19,9 @@ namespace Grid
         [SerializeField] private TileBase rangeHighlightTile;
         [SerializeField] private TileBase untargetableHighlightTile;
 
+        [SerializeField] private Tilemap skillShapeHighlight;
+        [SerializeField] private TileBase skillShapeHighlightTile;
+
         [SerializeField] private Tilemap obstaclesMap;
 
         private BattleManager _battleManager;
@@ -83,7 +86,7 @@ namespace Grid
             RemoveAllHighlights();
             nodesInRange.ForEach(node =>
             {
-                if (walkableTilemap.HasTile(node.CellPosition))
+                if (node.Walkable)
                     rangeHighlightMap.SetTile(node.CellPosition, rangeHighlightTile);
                 if (!targetableNodes.Contains(node))
                     rangeHighlightMap.SetTile(node.CellPosition, untargetableHighlightTile);
@@ -94,6 +97,18 @@ namespace Grid
         {
             pathHighlightMap.ClearAllTiles();
             rangeHighlightMap.ClearAllTiles();
+            skillShapeHighlight.ClearAllTiles();
+        }
+        
+        public void RemoveSkillShapeHighlight() => skillShapeHighlight.ClearAllTiles();
+
+        public void HighlightSkillShape(List<Node> shape)
+        {
+            shape.ForEach(node =>
+            {
+                if (node.Walkable)
+                    skillShapeHighlight.SetTile(node.CellPosition, skillShapeHighlightTile);
+            });
         }
 
         public List<Node> GetNodesInArea(Vector2 startingPos, int range, bool inLine)
@@ -103,22 +118,22 @@ namespace Grid
 
         private List<Node> GetNodesInLines(Vector2 startingPos, int range)
         {
-            var result = new List<Node>();
-            for (int i = 0; i < range; i++)
+            var result = new HashSet<Node>();
+            for (int i = 0; i <= range; i++)
             {
                 result.Add(GetNodeForWorldPos(new Vector2(startingPos.x + (i * 0.5f), startingPos.y + (i * 0.25f))));
                 result.Add(GetNodeForWorldPos(new Vector2(startingPos.x + (i * 0.5f), startingPos.y + (i * -0.25f))));
                 result.Add(GetNodeForWorldPos(new Vector2(startingPos.x + (i * -0.5f), startingPos.y + (i * -0.25f))));
                 result.Add(GetNodeForWorldPos(new Vector2(startingPos.x + (i * -0.5f), startingPos.y + (i * 0.25f))));
             }
-            result.RemoveAll(node => node == null);
-            return result;
+            result.RemoveWhere(node => node == null);
+            return new List<Node>(result);
         }
 
         private List<Node> GetNodesInCircle(Vector2 startingPos, int range)
         {
             Node startingNode = GetNodeForWorldPos(startingPos);
-            var result = new HashSet<Node>() { startingNode };
+            var result = new HashSet<Node> { startingNode };
             for (int i = 0; i < range; i++)
             {
                 var tempResult = new List<Node>(result);
@@ -127,7 +142,7 @@ namespace Grid
                     result.UnionWith(GetNeighbours(node));
                 }
             }
-            result.RemoveWhere(node => !node.Walkable || !walkableTilemap.HasTile(node.CellPosition) || node == startingNode);
+            result.RemoveWhere(node => !node.Walkable || !walkableTilemap.HasTile(node.CellPosition));
             return new List<Node>(result);
         }
 

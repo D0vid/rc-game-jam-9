@@ -29,9 +29,7 @@ MonoBehaviour:
   lineRestricted: 1
   lineOfSightRestricted: 1
   shape:
-    gridSize: {x: 3, y: 3}
+    gridSize: {x: 1, y: 1}
     cellSize: {x: 32, y: 16}
     cells:
-    - row: 000000000000000000000000
-    - row: 000000000100000000000000
-    - row: 000000000000000000000000
+    - row: 01000000
