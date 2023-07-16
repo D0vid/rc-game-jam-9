@@ -66,11 +66,10 @@ namespace StateManagement
 
         public void OnMouseClick(Vector2 mousePos)
         {
-            if (IsTargetable(mousePos))
+            if (IsTargetable(mousePos) && _battleManager.CurrentBattler.State == BattlerState.Casting)
             {
                 var mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
                 _battleManager.CurrentBattler.Cast(_currentSkill, mousePosSnapped);
-                _battleManager.RemoveAllHighlights();
             }
             StopCasting();
         }
@@ -81,6 +80,7 @@ namespace StateManagement
             {
                 _battleManager.CurrentBattler.State = BattlerState.Idle;
             }
+            _battleManager.RemoveAllHighlights();
         }
 
         private bool IsTargetable(Vector2 position)

@@ -2,27 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Bubblebeam.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Bubblebeam.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillShapeParser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillShapeParser.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Array2DIntUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/Array2DIntUtils.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_attack.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_idle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_walk.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_attack.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_idle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_walk.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_attack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_attack.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_idle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_idle.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_walk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_walk.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aura Focus.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Dragon Pulse.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_spritesheet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_spritesheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_spritesheet.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/BattleGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Grid/NodeGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Input/InputChannel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattleManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" afterDir="false" />
     </list>
@@ -123,10 +136,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7460">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7460" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -154,7 +167,8 @@
       <workItem from="1689173812658" duration="21362000" />
       <workItem from="1689353942129" duration="824000" />
       <workItem from="1689354944163" duration="20609000" />
-      <workItem from="1689411816759" duration="14304000" />
+      <workItem from="1689411816759" duration="15038000" />
+      <workItem from="1689507573192" duration="4219000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -275,7 +289,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689377721995</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Add ability casting + face cast direction">
+      <created>1689429488145</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689429488145</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update asset">
+      <created>1689429509760</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689429509760</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +343,9 @@
     <MESSAGE value="Reset stats on turn end instead of on turn start" />
     <MESSAGE value="Improve battle UI update loop + fix max health not showing at start of battle" />
     <MESSAGE value="Add ability selection with line of sights display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability selection with line of sights display" />
+    <MESSAGE value="Add ability casting + face cast direction" />
+    <MESSAGE value="Update asset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update asset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

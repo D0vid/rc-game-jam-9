@@ -37,7 +37,7 @@ namespace StateManagement
         {
             SpriteRenderer spriteRenderer = battlerInstance.GetComponent<SpriteRenderer>();
             var battlerAnimator = battlerInstance.gameObject.GetComponent<BattlerAnimator>();
-            battlerAnimator.SetAnimationSprites(battler.Sprites);
+            battlerAnimator.SetAnimationSprites(battler.IdleSprites, battler.WalkSprites, battler.AttackSprites);
             spriteRenderer.enabled = true;
         }
 

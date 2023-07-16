@@ -18,7 +18,9 @@ namespace Battlers
         public int DexNumber => battlerBase.dexNumber;
         public string Name => battlerBase.name;
         
-        public Sprite[] Sprites => battlerBase.sprites;
+        public Sprite[] IdleSprites => battlerBase.idleSprites;
+        public Sprite[] WalkSprites => battlerBase.walkSprites;
+        public Sprite[] AttackSprites => battlerBase.attackSprites;
         public Sprite TimelineSprite => battlerBase.timelineSprite;
         public Sprite Portrait => battlerBase.portrait;
 

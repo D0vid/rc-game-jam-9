@@ -7,7 +7,9 @@ namespace Battlers
     {
         public int dexNumber;
         
-        public Sprite[] sprites;
+        public Sprite[] idleSprites;
+        public Sprite[] walkSprites;
+        public Sprite[] attackSprites;
         public Sprite timelineSprite;
         public Sprite portrait;
 

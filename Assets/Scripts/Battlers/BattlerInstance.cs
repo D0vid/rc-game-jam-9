@@ -107,6 +107,7 @@ namespace Battlers
                 CurrentPP -= currentSkill.cost;
                 if (targetPos != Position)
                     _animator.FaceTowards(targetPos);
+                State = BattlerState.Attacking;
             }
         }
     }
@@ -116,6 +117,7 @@ namespace Battlers
         Idle,
         Moving,
         Casting,
+        Attacking
     }
 
     public enum Team
