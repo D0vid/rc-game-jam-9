@@ -1,43 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_attack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_attack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_idle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_walk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_sheet_walk.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_attack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_attack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_idle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_walk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_sheet_walk.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_attack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_attack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_idle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_idle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_walk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_sheet_walk.png.meta" afterDir="false" />
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add attack animations for characters">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Gardevoir/gardevoir_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Lucario/lucario_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_spritesheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Battlers/Swampert/swampert_spritesheet.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Gardevoir.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Lucario.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/BattlerBases/Swampert.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/Battler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/BattlersSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SpriteAnimator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +133,7 @@
       <workItem from="1689353942129" duration="824000" />
       <workItem from="1689354944163" duration="20609000" />
       <workItem from="1689411816759" duration="15038000" />
-      <workItem from="1689507573192" duration="4219000" />
+      <workItem from="1689507573192" duration="6943000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -303,7 +268,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689429509760</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add attack animations for characters">
+      <created>1689525628224</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689525628224</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +317,8 @@
     <MESSAGE value="Add ability selection with line of sights display" />
     <MESSAGE value="Add ability casting + face cast direction" />
     <MESSAGE value="Update asset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update asset" />
+    <MESSAGE value="Add attack animations for characters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add attack animations for characters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
