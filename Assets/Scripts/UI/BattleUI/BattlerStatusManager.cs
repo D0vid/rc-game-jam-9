@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
+using Utils.Channels;
 
 namespace UI.BattleUI
 {
@@ -42,6 +43,7 @@ namespace UI.BattleUI
         {
             portrait.sprite = displayedBattler.battler.Portrait;
             healthBar.fillAmount = displayedBattler.PercentHP;
+            healthBar.color = Color.Lerp(new Color(0.647f, 0.188f, 0.188f), new Color(0.459f, 0.655f, 0.263f), healthBar.fillAmount);
             battlerName.text = displayedBattler.battler.Name;
             healthText.text = $"{displayedBattler.CurrentHP} / {displayedBattler.MaxHP}";
             type1Sprite.sprite = displayedBattler.battler.Typing[0].icon;

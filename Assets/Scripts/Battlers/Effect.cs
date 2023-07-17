@@ -6,7 +6,6 @@ namespace Battlers
     [CreateAssetMenu(menuName = "ScriptableObjects/Effect")]
     public class Effect : ScriptableObject
     {
-        public new string name;
         [TextArea] public string description;
         public Sprite icon;
 
@@ -16,7 +15,7 @@ namespace Battlers
         public int duration;
         public float value;
         public Condition[] condition;
-        
+        public bool triggerOnCast;
         public TriggerPhase triggerPhase;
     }
     

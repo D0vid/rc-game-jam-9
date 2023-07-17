@@ -2,6 +2,7 @@
 using Battlers;
 using UnityEngine;
 using Utils;
+using Utils.Channels;
 
 namespace StateManagement
 {

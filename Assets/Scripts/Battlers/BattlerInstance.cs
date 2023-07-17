@@ -6,6 +6,7 @@ using Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Utils;
+using Utils.Channels;
 
 namespace Battlers
 {
@@ -24,26 +25,33 @@ namespace Battlers
         public int CurrentDef { get; set; }
         public int CurrentSpAtk { get; set; }
         public int CurrentSpDef { get; set; }
-        public int CurrentHP { get; set; }
+
+        public int CurrentHP
+        {
+            get => _currentHp;
+            private set
+            {
+                var amount = _currentHp - value;
+                _currentHp = value < 0 ? 0 : value;
+                battleChannel.RaiseStatChanged(this, Stat.Health, amount);
+                if (_currentHp == 0)
+                {
+                    Faint();
+                }
+            }
+        }
+
         public int MaxHP => battler.MaxHealth;
-        public int PercentHP => CurrentHP / MaxHP;
+        public float PercentHP => CurrentHP / (float)MaxHP;
         public int CurrentMP { get; set; }
         public int CurrentPP { get; set; }
         public int CurrentRange { get; set; }
         public List<Skill> Skills => battler.Skills.ToList();
 
-        public BattlerState State
-        {
-            get => _state;
-            set
-            {
-                _state = value;
-                Debug.Log("New state : "+ _state);
-            }
-        }
+        public BattlerState State { get; set; }
 
         private BattlerAnimator _animator;
-        private BattlerState _state;
+        private int _currentHp;
 
         private void Awake()
         {
@@ -70,7 +78,9 @@ namespace Battlers
 
         public void ResetStats()
         {
-            State = BattlerState.Idle;
+            if (State != BattlerState.Fainted)
+                State = BattlerState.Idle;
+            
             CurrentMP = battler.MovementPoints;
             CurrentPP = battler.PowerPoints;
             CurrentRange = battler.Range;
@@ -110,6 +120,18 @@ namespace Battlers
                 State = BattlerState.Attacking;
             }
         }
+
+        public void TakeDamage(int damage)
+        {
+            CurrentHP -= damage;
+        }
+
+        private void Faint()
+        {
+            State = BattlerState.Fainted;
+            battleChannel.RaiseBattlerFainted(this);
+            gameObject.SetActive(false); // TODO animation first
+        }
     }
 
     public enum BattlerState
@@ -117,7 +139,8 @@ namespace Battlers
         Idle,
         Moving,
         Casting,
-        Attacking
+        Attacking,
+        Fainted
     }
 
     public enum Team

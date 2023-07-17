@@ -6,6 +6,7 @@ using Grid;
 using Input;
 using UnityEngine;
 using Utils;
+using Utils.Channels;
 
 namespace StateManagement
 {
@@ -115,6 +116,12 @@ namespace StateManagement
             _currentBattler.State = BattlerState.Idle;
             _battleManager.RemoveAllHighlights();
         }
+        
+        private void OnBattlerFainted(BattlerInstance faintedBattler)
+        {
+            if (faintedBattler == _currentBattler) 
+                OnEndTurn();
+        }
 
         protected override void AddListeners()
         {
@@ -126,6 +133,7 @@ namespace StateManagement
             _battleChannel.skillSelectedEvent += OnSkillSelected;
             _inputChannel.hotkeyPressed += OnHotkeyPressed;
             _inputChannel.actionCanceled += OnActionCancelled;
+            _battleChannel.battlerFaintedEvent += OnBattlerFainted;
         }
 
         protected override void RemoveListeners()
@@ -138,6 +146,7 @@ namespace StateManagement
             _battleChannel.skillSelectedEvent -= OnSkillSelected;
             _inputChannel.hotkeyPressed -= OnHotkeyPressed;
             _inputChannel.actionCanceled -= OnActionCancelled;
+            _battleChannel.battlerFaintedEvent -= OnBattlerFainted;
         }
     }
 }

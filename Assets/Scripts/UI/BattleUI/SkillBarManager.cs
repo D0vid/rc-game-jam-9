@@ -4,6 +4,7 @@ using Battlers;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
+using Utils.Channels;
 
 namespace UI.BattleUI
 {

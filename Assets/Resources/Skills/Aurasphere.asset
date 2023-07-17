@@ -17,7 +17,8 @@ MonoBehaviour:
   animation: {fileID: 0}
   type: {fileID: 11400000, guid: bd5e055a83ad40e42a96a95ab27301d3, type: 2}
   category: 1
-  effects: []
+  effects:
+  - {fileID: 0}
   damage: 80
   cost: 4
   cooldown: 0

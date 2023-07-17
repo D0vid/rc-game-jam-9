@@ -5,6 +5,7 @@ using Grid;
 using Input;
 using UnityEngine;
 using Utils;
+using Utils.Channels;
 using Vector2 = UnityEngine.Vector2;
 
 namespace StateManagement
@@ -27,7 +28,10 @@ namespace StateManagement
         public List<BattlerInstance> PartyBattlerInstances { get; private set; }
         public List<BattlerInstance> EnemyBattlerInstances { get; private set; }
         
-        public IEnumerable<BattlerInstance> AllBattlers => PartyBattlerInstances.Concat(EnemyBattlerInstances).ToList();
+        public IEnumerable<BattlerInstance> AliveBattlers => PartyBattlerInstances
+            .Concat(EnemyBattlerInstances)
+            .Where(b => b.State != BattlerState.Fainted)
+            .ToList();
 
         public BattlerInstance CurrentBattler => _battlersQueue.Peek();
         
@@ -58,7 +62,15 @@ namespace StateManagement
                 _battlersQueue.Enqueue(currentTurnBattler);
                 currentTurnBattler.ResetStats();
             }
-            battleChannel.RaiseCurrentBattlerChanged(_battlersQueue.Peek());
+            
+            var nextBattler = _battlersQueue.Peek();
+            while (nextBattler.State == BattlerState.Fainted)
+            {
+                _battlersQueue.Dequeue();
+                nextBattler = _battlersQueue.Peek();
+            }
+            
+            battleChannel.RaiseCurrentBattlerChanged(nextBattler);
             TurnNumber++;
             DetermineNextTurn();
         }

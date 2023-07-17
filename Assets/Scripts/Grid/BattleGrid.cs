@@ -28,7 +28,7 @@ namespace Grid
 
         public List<Vector2> PartyPlacements { get; private set; }
         public List<Vector2> EnemyPlacements { get; private set; }
-        public List<Vector2> BattlerPositions => _battleManager.AllBattlers?.Select(b => b.Position).ToList();
+        public List<Vector2> BattlerPositions => _battleManager.AliveBattlers?.Select(b => b.Position).ToList();
 
         protected override void Awake()
         {

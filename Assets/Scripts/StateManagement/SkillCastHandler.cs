@@ -3,6 +3,8 @@ using Battlers;
 using Grid;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
+using Utils.Channels;
 
 namespace StateManagement
 {
@@ -11,6 +13,7 @@ namespace StateManagement
         private readonly BattleManager _battleManager;
         private readonly SkillShapeParser _skillShapeParser;
         private readonly Camera _mainCamera;
+        private readonly BattleChannel _battleChannel;
 
         private List<Node> _currentTargetableNodes; // TODO remove Node references and use Vector2 instead
         private Skill _currentSkill;
@@ -18,6 +21,7 @@ namespace StateManagement
 
         public SkillCastHandler(BattleManager battleManager)
         {
+            _battleChannel = Resources.Load<BattleChannel>("Channels/BattleChannel");
             _battleManager = battleManager;
             _currentTargetableNodes = new List<Node>();
             _currentShape = new List<Node>();
@@ -70,6 +74,7 @@ namespace StateManagement
             {
                 var mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
                 _battleManager.CurrentBattler.Cast(_currentSkill, mousePosSnapped);
+                _battleChannel.RaiseSkillCast(_battleManager.CurrentBattler, _currentSkill, _currentShape, _battleManager.AliveBattlers);
             }
             StopCasting();
         }
