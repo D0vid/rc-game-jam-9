@@ -54,7 +54,7 @@ namespace UI.BattleUI
             {
                 var timelineBattler = GetTimelineBattlerObject(battler);
                 var image = timelineBattler.transform.Find($"BattlerCard/HealthBar").GetComponent<Image>();
-                image.fillAmount = battler.PercentHP;
+                image.fillAmount = battler.PercentHp;
                 image.color = Color.Lerp(new Color(0.647f, 0.188f, 0.188f), new Color(0.459f, 0.655f, 0.263f), image.fillAmount);
             }
         }

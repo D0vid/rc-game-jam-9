@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 335074835}
   - component: {fileID: 335074836}
   - component: {fileID: 335074837}
+  - component: {fileID: 335074838}
   m_Layer: 0
   m_Name: BattleManager
   m_TagString: Untagged
@@ -242,6 +243,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleChannel: {fileID: 11400000, guid: 6256808145459304986b9fdf82f8c622, type: 2}
   textEffectPrefab: {fileID: 3172430841346694926, guid: bff310b50ae0c9e489c44d1ce2792d09, type: 3}
+--- !u!114 &335074838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335074832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1243952f3c5e492f9f5e0ac346398493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textEffectPrefab: {fileID: 3172430841346694926, guid: bff310b50ae0c9e489c44d1ce2792d09, type: 3}
+  battleChannel: {fileID: 11400000, guid: 6256808145459304986b9fdf82f8c622, type: 2}
+  textDuration: 0.5
 --- !u!1 &355073753
 GameObject:
   m_ObjectHideFlags: 0

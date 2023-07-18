@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Linq;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using Utils;
@@ -121,6 +122,31 @@ namespace Battlers
                 new SpriteAnimator(_spriteRenderer, attackSouthEast),
                 new SpriteAnimator(_spriteRenderer, attackNorthEast),
             };
+        }
+
+        public IEnumerator AnimateHealthChange(int amount)
+        {
+            Color targetColor = amount < 0 ? Color.red : Color.green;
+            Color originColor = Color.white;
+
+            Sequence seq = DOTween.Sequence();
+            seq.Append(_spriteRenderer.DOColor(targetColor, 0.5f / 2));
+            seq.Append(_spriteRenderer.DOColor(originColor, 0.5f / 2)); 
+
+            yield return seq.WaitForCompletion();
+        }
+
+        public IEnumerator AnimateFaint()
+        {
+            Color targetColor = Color.red;
+
+            Vector3 targetScale = new Vector3(0.1f, 0.1f, 0.1f);
+
+            Sequence seq = DOTween.Sequence();
+            seq.Append(_spriteRenderer.DOColor(targetColor, 0.5f / 4));
+            seq.Append(transform.DOScale(targetScale, 0.5f * 3 / 4));
+
+            yield return seq.WaitForCompletion();
         }
     }
 }

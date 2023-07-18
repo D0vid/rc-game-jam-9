@@ -57,7 +57,7 @@ namespace StateManagement
                 var currentBattlerPos = _currentBattler.Position;
                 _currentPath = _pathFindingManager.FindPath(currentBattlerPos, mousePosSnapped);
                 _lastSentPosition = mousePosSnapped;
-                if (_currentPath.Count <= _currentBattler.CurrentMP)
+                if (_currentPath.Count <= _currentBattler.CurrentMp)
                     _battleManager.HighlightPath(_currentPath);
                 else
                     ResetPath();

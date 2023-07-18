@@ -40,16 +40,16 @@ namespace UI.BattleUI
         private void UpdateBattlerStatus(BattlerInstance displayedBattler)
         {
             portrait.sprite = displayedBattler.battler.Portrait;
-            healthBar.fillAmount = displayedBattler.PercentHP;
+            healthBar.fillAmount = displayedBattler.PercentHp;
             healthBar.color = Color.Lerp(new Color(0.647f, 0.188f, 0.188f), new Color(0.459f, 0.655f, 0.263f), healthBar.fillAmount);
             battlerName.text = displayedBattler.battler.Name;
-            healthText.text = $"{displayedBattler.CurrentHP} / {displayedBattler.MaxHP}";
+            healthText.text = $"{displayedBattler.CurrentHp} / {displayedBattler.MaxHp}";
             type1Sprite.sprite = displayedBattler.battler.Typing[0].icon;
             if (displayedBattler.battler.Typing.Length > 1)
                 type2Sprite.sprite = displayedBattler.battler.Typing[1].icon;
-            ppText.text = displayedBattler.CurrentPP.ToString();
+            ppText.text = displayedBattler.CurrentPp.ToString();
             raText.text = "0";
-            mpText.text = displayedBattler.CurrentMP.ToString();
+            mpText.text = displayedBattler.CurrentMp.ToString();
             shText.text = "0";
         }
 

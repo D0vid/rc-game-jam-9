@@ -31,7 +31,7 @@ namespace StateManagement
 
         public void HandleSkillSelected(Skill skill)
         {
-            if (_battleManager.CurrentBattler.CurrentPP < skill.cost)
+            if (_battleManager.CurrentBattler.CurrentPp < skill.cost)
             {
                 Debug.Log("Not enough PP for this move.");
                 return;

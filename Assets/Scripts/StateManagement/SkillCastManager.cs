@@ -27,42 +27,42 @@ namespace StateManagement
             var hitBattlers = DetermineHitBattlers(skillShape, aliveBattlers);
             foreach (var hitBattler in hitBattlers)
             {
-                var damage = _damageCalculator.CalculateDamage(currentBattler, hitBattler, skill);
-                StartCoroutine(SpawnDamageText(hitBattler, damage));
-                hitBattler.TakeDamage(damage);
+                if (skill.damage != 0)
+                {
+                    var damage = _damageCalculator.CalculateDamage(currentBattler, hitBattler, skill);
+                    hitBattler.CurrentHp -= damage;
+                }
+                ApplyEffects(hitBattler, skill.effects);
             }
         }
 
-        private IEnumerator SpawnDamageText(BattlerInstance hitBattler, int damage)
+        private void ApplyEffects(BattlerInstance target, Effect[] effects)
         {
-            var instance = Instantiate(textEffectPrefab, hitBattler.transform);
-            instance.transform.position += new Vector3(0, 0.5f, 0);
-            yield return StartCoroutine(PlayEffectTextAnimation(instance.GetComponent<TextMeshPro>(), damage));
-            Destroy(instance);
+            foreach (var effect in effects)
+            {
+                ApplyEffect(target, effect);
+            }
         }
-        
-        private IEnumerator PlayEffectTextAnimation(TextMeshPro textMesh, int damage)
+
+        private void ApplyEffect(BattlerInstance target, Effect effect)
         {
-            yield return StartCoroutine(TextPopupEffect(textMesh, damage, 0.5f));
-        }
-        
-        private IEnumerator TextPopupEffect(TextMeshPro textMesh, int damage, float duration)
-        {
+            int value = (int)effect.value;
 
-            Color color = Color.red;
-            textMesh.text = $"-{damage}";
-            textMesh.color = color;
-
-            Vector3 targetPosition = new Vector3(0, 0.75f, 0);
-
-            textMesh.alpha = 0;
-
-            Sequence seq = DOTween.Sequence();
-            seq.Append(textMesh.transform.DOLocalMove(targetPosition, duration));
-            seq.Join(textMesh.DOFade(1, duration / 2));
-            seq.Append(textMesh.DOFade(0, duration / 2));
-
-            yield return seq.WaitForCompletion();
+            switch (effect.stat)
+            {
+                case Stat.Health:
+                    target.CurrentHp += value;
+                    break;
+                case Stat.MovementPoints:
+                    target.CurrentMp += value;
+                    break;
+                case Stat.PowerPoints:
+                    target.CurrentPp += value;
+                    break;
+                case Stat.Range:
+                    target.CurrentRange += value;
+                    break;
+            }
         }
 
         private IEnumerable<BattlerInstance> DetermineHitBattlers(IEnumerable<Node> currentShape, IEnumerable<BattlerInstance> aliveBattlers)

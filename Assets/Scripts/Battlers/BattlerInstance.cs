@@ -2,10 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Utils;
 using Utils.Channels;
 
 namespace Battlers
@@ -21,37 +21,95 @@ namespace Battlers
         public Vector2 Position => transform.position;
         public Vector2 Destination { get; set; }
 
-        public int CurrentAtk { get; set; }
-        public int CurrentDef { get; set; }
-        public int CurrentSpAtk { get; set; }
-        public int CurrentSpDef { get; set; }
+        public int CurrentAtk
+        {
+            get => _currentAtk;
+            set => _currentAtk = value;
+        }
 
-        public int CurrentHP
+        public int CurrentDef
+        {
+            get => _currentDef;
+            set => _currentDef = value;
+        }
+
+        public int CurrentSpAtk
+        {
+            get => _currentSpAtk;
+            set => _currentSpAtk = value;
+        }
+
+        public int CurrentSpDef
+        {
+            get => _currentSpDef;
+            set => _currentSpDef = value;
+        }
+
+        public int MaxHp => battler.MaxHealth;
+        public float PercentHp => CurrentHp / (float)MaxHp;
+        public int CurrentHp
         {
             get => _currentHp;
-            private set
+            set
             {
-                var amount = _currentHp - value;
+                var amount = value - _currentHp;
                 _currentHp = value < 0 ? 0 : value;
                 battleChannel.RaiseStatChanged(this, Stat.Health, amount);
+                StartCoroutine(AnimateHealthChange(amount));
                 if (_currentHp == 0)
                 {
-                    Faint();
+                    StartCoroutine(Faint());
                 }
             }
         }
 
-        public int MaxHP => battler.MaxHealth;
-        public float PercentHP => CurrentHP / (float)MaxHP;
-        public int CurrentMP { get; set; }
-        public int CurrentPP { get; set; }
-        public int CurrentRange { get; set; }
+        public int CurrentMp
+        {
+            get => _currentMp;
+            set
+            {
+                var amount = value - _currentMp;
+                _currentMp = value < 0 ? 0 : value;
+                battleChannel.RaiseStatChanged(this, Stat.MovementPoints, amount);
+            }
+        }
+
+        public int CurrentPp
+        {
+            get => _currentPp;
+            set
+            {
+                var amount = value - _currentPp;
+                _currentPp = value < 0 ? 0 : value;
+                battleChannel.RaiseStatChanged(this, Stat.PowerPoints, amount);
+            }
+        }
+
+        public int CurrentRange
+        {
+            get => _currentRange;
+            set
+            {
+                var amount = value - _currentRange;
+                _currentRange = value < 0 ? 0 : value;
+                battleChannel.RaiseStatChanged(this, Stat.Range, amount);
+            }
+        }
+
         public List<Skill> Skills => battler.Skills.ToList();
 
         public BattlerState State { get; set; }
 
         private BattlerAnimator _animator;
+        
         private int _currentHp;
+        private int _currentMp;
+        private int _currentPp;
+        private int _currentSpDef;
+        private int _currentSpAtk;
+        private int _currentDef;
+        private int _currentAtk;
+        private int _currentRange;
 
         private void Awake()
         {
@@ -62,13 +120,13 @@ namespace Battlers
         {
             State = BattlerState.Idle;
             Destination = Position;
-            CurrentAtk = battler.Attack;
-            CurrentDef = battler.Defence;
-            CurrentSpAtk = battler.SpecialAtk;
-            CurrentSpDef = battler.SpecialDef;
-            CurrentMP = battler.MovementPoints;
-            CurrentPP = battler.PowerPoints;
-            CurrentRange = battler.Range;
+            _currentAtk = battler.Attack;
+            _currentDef = battler.Defence;
+            _currentSpAtk = battler.SpecialAtk;
+            _currentSpDef = battler.SpecialDef;
+            _currentMp = battler.MovementPoints;
+            _currentPp = battler.PowerPoints;
+            _currentRange = battler.Range;
             _currentHp = battler.MaxHealth;
         }
 
@@ -81,9 +139,9 @@ namespace Battlers
             if (State != BattlerState.Fainted)
                 State = BattlerState.Idle;
             
-            CurrentMP = battler.MovementPoints;
-            CurrentPP = battler.PowerPoints;
-            CurrentRange = battler.Range;
+            _currentMp = battler.MovementPoints;
+            _currentPp = battler.PowerPoints;
+            _currentRange = battler.Range;
         }
 
         public IEnumerator FollowPath(List<Node> path, Action onEndOfPathReached)
@@ -94,7 +152,7 @@ namespace Battlers
             {
                 yield return StartCoroutine(Move(node));
             }
-            CurrentMP -= path.Count;
+            _currentMp -= path.Count;
             State = BattlerState.Idle;
             onEndOfPathReached();
         }
@@ -112,30 +170,25 @@ namespace Battlers
 
         public void Cast(Skill currentSkill, Vector2 targetPos)
         {
-            if (currentSkill.cost <= CurrentPP)
+            if (currentSkill.cost <= CurrentPp)
             {
-                CurrentPP -= currentSkill.cost;
+                _currentPp -= currentSkill.cost;
                 if (targetPos != Position)
                     _animator.FaceTowards(targetPos);
                 State = BattlerState.Attacking;
             }
         }
 
-        public void TakeDamage(int damage)
+        private IEnumerator AnimateHealthChange(int amount)
         {
-            CurrentHP -= damage;
+            yield return StartCoroutine(_animator.AnimateHealthChange(amount));
         }
 
-        private void Faint()
+        private IEnumerator Faint()
         {
             State = BattlerState.Fainted;
             battleChannel.RaiseBattlerFainted(this);
-            StartCoroutine(FaintCoroutine()); // TODO animation first
-        }
-
-        private IEnumerator FaintCoroutine()
-        {
-            yield return new WaitForSeconds(1f);
+            yield return StartCoroutine(_animator.AnimateFaint());
             gameObject.SetActive(false);
         }
     }

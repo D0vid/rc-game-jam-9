@@ -40,7 +40,7 @@ namespace UI.BattleUI
             _textArea.text = "";
             foreach (var message in _messageQueue)
             {
-                _textArea.text += message + "\n";
+                _textArea.text += "> " + message + "\n";
             }
         }
 
@@ -57,8 +57,8 @@ namespace UI.BattleUI
         {
             if (stat == Stat.Health)
             {
-                var sign = amount < 0 ? "+" : "-";
-                var message = $"{battler.name}: {sign}{Mathf.Abs(amount)} HP.";
+                var sign = amount > 0 ? "+" : "";
+                var message = $"{battler.name}: {sign}{amount} HP.";
                 LogMessage(message);
             }
         }

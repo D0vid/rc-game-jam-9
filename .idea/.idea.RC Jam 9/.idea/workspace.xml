@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Better WIP battle log">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Add dotween + text popup animations when taking damage">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TextEffectSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/TextEffectSpawner.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/TextEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/TextEffect.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattleLogsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattleLogsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/TimeLineManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,10 +120,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2328">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="2328" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -146,7 +154,7 @@
       <workItem from="1689411816759" duration="15038000" />
       <workItem from="1689507573192" duration="6943000" />
       <workItem from="1689616629273" duration="18433000" />
-      <workItem from="1689696921617" duration="6335000" />
+      <workItem from="1689696921617" duration="16436000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -309,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689700091423</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add dotween + text popup animations when taking damage">
+      <created>1689703624390</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689703624390</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,23 +370,24 @@
     <MESSAGE value="UI fixes" />
     <MESSAGE value="Add damage, fainting and battle log prototype" />
     <MESSAGE value="Better WIP battle log" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better WIP battle log" />
+    <MESSAGE value="Add dotween + text popup animations when taking damage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dotween + text popup animations when taking damage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/PlayerTurnState.cs</url>
-          <line>51</line>
-          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\PlayerTurnState.cs" initialLine="50" containingFunctionPresentation="method 'OnMouseHover'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/StateManagement/TextEffectSpawner.cs</url>
+          <line>45</line>
+          <properties documentPath="C:\Users\David\Unity\RC Jam 9\Assets\Scripts\StateManagement\TextEffectSpawner.cs" initialLine="45" containingFunctionPresentation="method 'PlayEffectTextAnimation'">
             <startOffsets>
-              <option value="1511" />
+              <option value="1576" />
             </startOffsets>
             <endOffsets>
-              <option value="1581" />
+              <option value="1615" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
