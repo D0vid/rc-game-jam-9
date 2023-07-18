@@ -18,7 +18,7 @@ MonoBehaviour:
   type: {fileID: 11400000, guid: b51f25c2afe1fc94383733878dd7d26e, type: 2}
   category: 1
   effects: []
-  damage: 90
+  damage: 40
   cost: 4
   cooldown: 0
   accuracy: 100

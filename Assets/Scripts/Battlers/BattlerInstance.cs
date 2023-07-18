@@ -130,7 +130,13 @@ namespace Battlers
         {
             State = BattlerState.Fainted;
             battleChannel.RaiseBattlerFainted(this);
-            gameObject.SetActive(false); // TODO animation first
+            StartCoroutine(FaintCoroutine()); // TODO animation first
+        }
+
+        private IEnumerator FaintCoroutine()
+        {
+            yield return new WaitForSeconds(1f);
+            gameObject.SetActive(false);
         }
     }
 

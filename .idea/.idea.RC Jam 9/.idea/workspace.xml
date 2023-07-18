@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="">
+    <list default="true" id="56fb6b22-ba9d-4573-b929-8fbe19372542" name="Changes" comment="Better WIP battle log">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RC Jam 9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Aurasphere.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Skills/Surf.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/4_Tutorial Battle.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battlers/BattlerInstance.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StateManagement/SkillCastManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattleLogsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattleLogsManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/BattleUI/BattlerStatusManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
       <workItem from="1689411816759" duration="15038000" />
       <workItem from="1689507573192" duration="6943000" />
       <workItem from="1689616629273" duration="18433000" />
-      <workItem from="1689696921617" duration="2843000" />
+      <workItem from="1689696921617" duration="6335000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit with basic title screen, main menu, intro and battle state machine with InitBattleState prototype">
       <created>1688423935380</created>
@@ -302,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689634653023</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Better WIP battle log">
+      <created>1689700091423</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689700091423</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,8 @@
     <MESSAGE value="Add attack animations for characters" />
     <MESSAGE value="UI fixes" />
     <MESSAGE value="Add damage, fainting and battle log prototype" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add damage, fainting and battle log prototype" />
+    <MESSAGE value="Better WIP battle log" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better WIP battle log" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

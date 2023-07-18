@@ -19,7 +19,7 @@ MonoBehaviour:
   category: 1
   effects:
   - {fileID: 0}
-  damage: 80
+  damage: 20
   cost: 4
   cooldown: 0
   accuracy: 100
