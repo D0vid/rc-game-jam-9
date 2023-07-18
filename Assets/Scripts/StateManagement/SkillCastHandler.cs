@@ -72,9 +72,9 @@ namespace StateManagement
         {
             if (IsTargetable(mousePos) && _battleManager.CurrentBattler.State == BattlerState.Casting)
             {
+                _battleChannel.RaiseSkillCast(_battleManager.CurrentBattler, _currentSkill, _currentShape, _battleManager.AliveBattlers);
                 var mousePosSnapped = _battleManager.SnapPositionToGrid(mousePos);
                 _battleManager.CurrentBattler.Cast(_currentSkill, mousePosSnapped);
-                _battleChannel.RaiseSkillCast(_battleManager.CurrentBattler, _currentSkill, _currentShape, _battleManager.AliveBattlers);
             }
             StopCasting();
         }

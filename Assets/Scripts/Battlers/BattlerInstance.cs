@@ -69,7 +69,7 @@ namespace Battlers
             CurrentMP = battler.MovementPoints;
             CurrentPP = battler.PowerPoints;
             CurrentRange = battler.Range;
-            CurrentHP = battler.MaxHealth;
+            _currentHp = battler.MaxHealth;
         }
 
         public void OnPointerEnter(PointerEventData eventData) => battleChannel.RaiseStartedHoveringBattler(this);
